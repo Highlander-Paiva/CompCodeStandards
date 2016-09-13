@@ -3,7 +3,7 @@
 
 ## Resumo:
 
-Apresentamos neste documento diretrizes para aplicações web contruídas para CompJúnior. E tornamos disponível a todos que desejam contribuir para melhoria de padrões de desenvolvimento e melhores práticas em relação à Front-End.
+Apresentamos neste documento diretrizes para aplicações web construídas para CompJúnior. E tornamos disponível a todos que desejam contribuir para melhoria de padrões de desenvolvimento e melhores práticas em relação à Front-End.
 Gostaríamos de deixar claro que padrões de desenvolvimento muitas vezes são de caráter pessoal, dependendo da equipe decidir a melhor maneira de trabalhar esses padrões.
 
 Já as melhores práticas estão em constante evolução e deve-se ser flexível para refletir as últimas das melhores práticas e tendências. Logo, incentivamos que você nos dê um fork aqui no Git Hub, mande-nos pull requests, envie-nos issues, e adicione questões para debatermos padrões emergentes e boas práticas.
@@ -23,19 +23,19 @@ Para a confecção da Página, usamos o [Initializr](http://www.initializr.com/)
 
 ## Licença e Créditos
 
-Todo conteúdo está licenciado através de Creative Commons Attribution 3.0 Unported License: https://creativecommons.org/licenses/by/3.0/br/
+Todo conteúdo está licenciado através de [Creative Commons Attribution 3.0 Unported License] (https://creativecommons.org/licenses/by/3.0/br/)
 
 **O código foi baseado nas práticas descritas por:**
-[ISOBAR IDEV CodeStandards](https://github.com/isobar-idev/code-standards)
+[ ISOBAR IDEV CodeStandards](https://github.com/isobar-idev/code-standards)
 
 **E seus respectivos autores:**
-Paul Irish [Git](https://github.com/paulirish) | [Twitter](https://twitter.com/paul_irish)
-Nick Cooley [](https://github.com/nickcooley) | [Twitter](https://twitter.com/nickcooley)
-Adam McIntyre
-Rob Larsen [Git](https://github.com/roblarsen) | [Twitter](https://twitter.com/robreact)
-Joel Oliviera [Git](https://github.com/jayroh)
-Jared Williams [Git](https://github.com/jaredwilli)
-Annette Arabasz [Git](https://github.com/anevaude)
-Rob Cherny [Git](https://github.com/rcherny) | [Twitter](https://twitter.com/rcherny)
+* Paul Irish [Git](https://github.com/paulirish) | [Twitter](https://twitter.com/paul_irish)
+* Nick Cooley [](https://github.com/nickcooley) | [Twitter](https://twitter.com/nickcooley)
+* Adam McIntyre
+* Rob Larsen [Git](https://github.com/roblarsen) | [Twitter](https://twitter.com/robreact)
+* Joel Oliviera [Git](https://github.com/jayroh)
+* Jared Williams [Git](https://github.com/jaredwilli)
+* Annette Arabasz [Git](https://github.com/anevaude)
+* Rob Cherny [Git](https://github.com/rcherny) | [Twitter](https://twitter.com/rcherny)
 
 _Algumas modificações foram feitas para atender a realidade da CompJúnior._
