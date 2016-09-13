@@ -1,0 +1,8 @@
+* {
+  float: none;       /* Telas não são grandes o suficiente para dar conta de floats */
+  background: #fff;  /*  O máximo de contraste possível */
+  color: #000;
+}
+
+/* Levemente reduzindo a fonte, para remover a necessidade de scroll */
+body { font-size: 80%; }

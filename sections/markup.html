@@ -1,0 +1,127 @@
+<!-- #### MARKUP SECTION #### -->
+
+<section id="markup">
+
+	<div class="intro has-icon">
+		<img class="icon" src="img/layout/code.png" alt="</>" />
+		<h1>Marcação</h1>
+
+    <p>O primeiro componente de qualquer página web é a linguagem de marcação <abbr title="HyperText Markup Language">HTML</abbr>. A Linguagem de Marcação de Hiper Texto (do inglês HTML) tem uma história sórdida, mas iniciou uma nova nos últimos anos. Após uma longa experimentação de uma variante baseada em <abbr title="Extensible Markup Language">XML</abbr> (<abbr title="Extensible Hypertext Markup Language">XHTML</abbr>), a indústria aceitou que HTML é o futuro da web.</p>
+
+    <p>A marcação define a estrutura e os elementos do documento, oferecendo um conteúdo estruturado. A marcação não tem intenção de definir o visual do conteúdo da página, além dos conceitos rudimentares, como cabeçalhos, parágrafos e listas. Os atributos de apresentação do HTML foram dados obsoletos e o estilo deve estar contido nas folhas de <a href="#css">estilo</a>.
+
+	</div>
+
+	<h2 id="html5">HTML5</h2>
+
+  	<p><a href="http://www.ibm.com/developerworks/library/wa-webstandards/index.html">HTML5</a> é uma nova versão do HTML e do XHTML. O rascunho das <a href="http://www.w3.org/TR/html5/">especificações do HTML5</a> definem uma única linguagem que pode ser escrita em HTML e XML. Esta procura resolver problemas encontrados em iterações anteriores do HTML, que endereçam as necessidades de uma <em>aplicação web</em>, uma <a href="http://html5.org/">área</a> previamente não coberta</a> pelo HTML.</p>
+
+	<p>Nós utilizaremos o <code>doctype</code> do HTML5 bem como seus recursos quando apropriado.</p>
+
+ 	<p>Nós testaremos nossa marcação com a ferramenta de <a href="http://validator.w3.org/">validação da <aabr title="World Wide Web Consortium">W3C</aabr></a>, para assegurar sua boa formação. Código 100% válido não é fundamental, mas a validação certamente ajuda na manutenção do código, bem como na sua depuração. <b>A compJúnior não garante código 100% válido, em contrapartida investe numa experiêcia entre navegadores mais consistente.</p>
+
+	<h3 id="h5bp">Modelo</h3>
+
+  	<p>Para documentos HTML5 nós utilizamos o modelo <a href="http://html5boilerplate.com/"><abbr title="HTML5 Boilerplate">H5BP</abbr></a> modificado para as necessidades do projeto. <a href="https://github.com/isobar-idev/html5-boilerplate">Repósitorio no GitHub</a>.</p>
+
+	<h2>Doctype</h2>
+
+  	<p>Um <code>doctype</code> apropriado que ativa o modo de renderização padrão do seu navegador sempre deve ser usado.</p>
+
+  	<p>Um ótimo aspecto do HTML5 é que ele dinamiza a quantidade de de código necessário. Atributos incoerentes foram deixados e a declaração de <code>doctype</code> foi simplicada. Além disso, não há necessidade do uso de <code>CDATA</code> para interpolar JavaScript, antes um requisito do XHTML.</p>
+
+	<figure class="preCode">HTML5 Doctype</figure>
+	<textarea class="brush:html">
+		<!doctype html>
+	</textarea>
+
+	<h3>Codificação de caracteres</h3>
+
+  	<p>Todo marcação deve ser codificada em <abbr title="8-bit Unicode Transformation Format">UTF-8</abbr>, por ser o mais amigável para internacionalização, e isto, deve estar tanto no cabeçalho da página quanto no cabeçalho de resposta da requisição <abbr title="Hypertext Transfer Protocol">HTTP</abbr>.</p>
+
+	<p>Ajustando a codificação de caracteres usando o elemento <code>&lt;meta&gt;</code>.</p>
+	<textarea class="brush:html">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</textarea>
+
+	<p>Em HTML5, apenas use:</p>
+	<textarea class="brush:html">
+		<meta charset="utf-8">
+	</textarea>
+
+	<h3>Uso dos novos elementos semânticos</h3>
+
+	<p>Elementos como <code>header, footer, section, article</code>, e outros, podem ser usados inúmeras vezes nas páginas, e mais do que uma vez dentro de um ou do mesmo. Em casos em que exista mais de um em um mesmo elemento que será usado pelo mesmo propósito, como usar <code>article</code> para cada artigo de um blog ou página e cada artigo tiver um <code>header</code> e um <code>footer</code>, adicionar uma classe pode ajudar a separá-los de quaisquer desses elementos usados para outra finalidade na página. Dessa forma você pode selecioná-los especificamente em seu CSS. Entretanto isso nem sempre é necessário, dependendo da estrutura da página e da maneira em que definida os seletores.</p>
+
+	<textarea class="brush:html">
+		<header>
+			<h1>Nosso Blog</h1>
+		</header>
+
+		<article>
+			<header>
+				<h1>Esse é o melhor título de Blog que existe.</h1>
+			</header>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+		</article>
+		<article>
+			<header>
+				<h1>Já este é o segundo melhor</h1>
+			</header>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+		</article>
+	</textarea>
+
+	<p>Estruturar a marcação de maneira limpa permite o uso de seletores simplificados que mantem o nível de especificação da marcação baixo facilitando sobrepor os seletores conforme o seu CSS cresce.</p>
+
+	<textarea class="brush:css">
+	header h1 { color: red; }
+	article header h1 { color: blue; }
+	</textarea>
+
+	<h2>Diretrizes Gerais de Marcação</h2>
+
+  	<p>Abaixo estão as regras gerais de estruturação do HTML. Profissionais devem ser lembrados de usar marcação semântica, que representa o significado do conteúdo a ser criado.</p>
+
+	<ul>
+		<li>Use o elemento <code>&lt;p&gt;</code> para parágrafos ao invés de duplo <code>&lt;br&gt;</code>.</li>
+		<li>Faça o uso de <code>&lt;dl&gt;</code> (lista de definição) e <code>&lt;blockquote&gt;</code>, quando apropriado.</li>
+		<li>Listas devem ser sempre representadas por uma <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, ou <code>&lt;dl&gt;</code>, nunca um conjunto de <code>&lt;div&gt;</code> ou <code>&lt;p&gt;</code>.</li>
+    	<li>Use a tag <code>&lt;label&gt;</code> para rotular cada campo de um formulário, o atributo <code>for</code> deve associar o rótulo ao campo, para que os usuários possam clicar no rótulo e assim dar foco no campo associado.
+     	<code>cursor:pointer;</code> no rótulo é desejável.</li>
+	    <li>Não use o atributo <code>size</code> nos seus campos. O atributo <code>size</code> é relativo ao tamanho da fonte do campo de texto. Ao invés disso, use a propriedade <code>width</code> do CSS.</li>
+	    <li>Escreva comentários no fechamento de <code>&lt;div&gt;</code> indicando qual é o elemento que está sendo fechado (id ou class). Isso ajudará quando existir muitos elementos aninhados e muita identação.</li>
+	    <li>Tabelas não devem ser utilizadas para layouts de página.</li>
+	    <li>Use <a href="http://en.wikipedia.org/wiki/Microformat">microformats</a> e ou Microdata quando for apropriado, especialmente <a href="http://microformats.org/wiki/hcard">hCard</a> e <a href="http://microformats.org/wiki/adr">adr</a>.</li>
+	    <li>Faça o uso dos elementos <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code> e <code>&lt;th&gt;</code> (e o atributo <code>scope</code>) quando apropriado.
+				<figure class="preCode">Marcação de tabela com a sintaxe adequada (<code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;th&gt;</code>, <code>scope</code>).</figure>
+				<textarea class="brush:html">
+					<table summary="Este é o sumário desta tabela">
+						<thead>
+							<tr>
+								<th scope="col">Tabela cabeçalho 1</th>
+								<th scope="col">Tabela cabeçalho 2</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Dados da tabela 1</td>
+								<td>Dados da tabela 2</td>
+							</tr>
+						</tbody>
+					</table>
+				</textarea>
+			</li>
+
+    <li>Utilize iniciais maiúsculas para cabeçalhos e títulos. Nunca use apenas caixa alta ou baixa na marcação de títulos, utilize a propriedade CSS <code>text-transform:uppercase/lowercase</code> para isso.</li>
+	</ul>
+
+	<h3>Notação de atributos</h3>
+
+  	<p>Apesar da especificação do HTML5 definir aspas em volta de atributos como opcional, para manter a consistência, todos os atributos devem utilizar aspas.</p>
+
+	<textarea class="brush:html">
+		<p class="line note" data-attribute="106">Este é o meu parágrafo de um texto especial.</p>
+	</textarea>
+
+</section>
