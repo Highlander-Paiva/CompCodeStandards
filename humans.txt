@@ -3,13 +3,18 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Title: Highlander Paiva
+    Email: highlander@compjunior.com.br
+    GitHub Profile: https://github.com/Highlander-Paiva
+    Location: Lavras, Brasil
 
 # THANKS
 
-    <name>
+    CompJúnior - http://compjunior.com.br
 
 # TECHNOLOGY COLOPHON
 
-    HTML5, CSS3
-    jQuery, Modernizr
+    HTML5, CSS3, JavaScript
+    jQuery, Modernizr, FlashCanvas, DD BelatedPNG e Animation Frame.
+
+    Editor: Atom

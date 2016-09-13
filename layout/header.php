@@ -8,10 +8,6 @@
 <!--[if gt IE 9]><!--><html class="no-js" lang="pt-BR"><!--<![endif]-->
     <head><meta charset="utf-8">
 
-        <!-- Sempre força o ultimo IE renderizar a engine (ainda que na intranet) & Chrome Frame
-        Remova isso se você usa .htaccess -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
 		<title><?php echo $page_title; ?> | CompJúnior</title>
         <meta name="description" content="<?php echo $page_description; ?>">
         <meta name="author" content="Highlander Paiva - Desenvolvedor Front-End">
