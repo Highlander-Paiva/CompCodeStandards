@@ -29,13 +29,13 @@ Todo conteúdo está licenciado através de [Creative Commons Attribution 3.0 Un
 [ ISOBAR IDEV CodeStandards](https://github.com/isobar-idev/code-standards)
 
 **E seus respectivos autores:**
-* Paul Irish [Git](https://github.com/paulirish) | [Twitter](https://twitter.com/paul_irish)
-* Nick Cooley [](https://github.com/nickcooley) | [Twitter](https://twitter.com/nickcooley)
+* Paul Irish [GitHub](https://github.com/paulirish) | [Twitter](https://twitter.com/paul_irish)
+* Nick Cooley [GitHub](https://github.com/nickcooley) | [Twitter](https://twitter.com/nickcooley)
 * Adam McIntyre
-* Rob Larsen [Git](https://github.com/roblarsen) | [Twitter](https://twitter.com/robreact)
-* Joel Oliviera [Git](https://github.com/jayroh)
-* Jared Williams [Git](https://github.com/jaredwilli)
-* Annette Arabasz [Git](https://github.com/anevaude)
-* Rob Cherny [Git](https://github.com/rcherny) | [Twitter](https://twitter.com/rcherny)
+* Rob Larsen [GitHub](https://github.com/roblarsen) | [Twitter](https://twitter.com/robreact)
+* Joel Oliviera [GitHub](https://github.com/jayroh)
+* Jared Williams [GitHub](https://github.com/jaredwilli)
+* Annette Arabasz [GitHub](https://github.com/anevaude)
+* Rob Cherny [GitHub](https://github.com/rcherny) | [Twitter](https://twitter.com/rcherny)
 
 _Algumas modificações foram feitas para atender a realidade da CompJúnior._
