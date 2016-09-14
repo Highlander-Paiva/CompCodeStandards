@@ -8,21 +8,14 @@ include_once('layout/header.php');
 ?>
 
 	<body>
-		<a class="fork" href="https://github.com/haggen/code-standards" target="_blank"></a>
+		<a class="fork" href="https://github.com/Highlander-Paiva/CompCodeStandards" target="_blank"></a>
+		<header role="banner">
+			<h1><a id="logo" href="<?php echo $page_root; ?>">CompJunior</a></h1>
+			<div class="menu-button"></div>
+		</header>
 		<div id="container">
 
-			<header role="banner">
-				<h1><a id="logo" href="<?php echo $page_root; ?>">CompJunior</a></h1>
 
-				<canvas id="canvas-logo" width="500" height="300">
-					<strong>Seu navegador não pode lidar com tamanha a grandiosidade!</strong>
-				</canvas>
-
-                <ul id="social">
-					<li><a class="icon" href="https://www.facebook.com/compjunior" id="facebook"></a></li>
-					<li><a href="http://www.compjunior.com.br" id="linkback">Ir para a CompJúnior</a></li>
-				</ul>
-			</header>
 
 
 			<div id="main" role="document">
@@ -53,10 +46,10 @@ include_once('layout/header.php');
 		</div><!--! Fim do #container !-->
 
 		<footer role="contentinfo">
-			<p>
-				<span class="float_left"><?php print date("Y"); ?> CompJúnior. Todos os direitos reservados.</span>
-				<span class="float_right">Todo conteúdo licenciado sobre <a href="https://creativecommons.org/licenses/by/3.0/br/"> Creative Commons Attribution 3.0 Unported License</a></span>
-			</p>
+			<div class="footer-inner">
+				<p class="copyright"><?php print date("Y"); ?> CompJúnior. Todos os direitos reservados.</p>
+				<p class="license">Todo conteúdo licenciado sobre Creative Commons Attribution 3.0 Unported License</p>
+			</div>
 		</footer>
 
 

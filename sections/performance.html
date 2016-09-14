@@ -3,7 +3,7 @@
 <section id="performance">
 
 	<div class="intro has-icon">
-		<img class="icon" src="img/layout/icon-curly.png" alt="{}" />
+		<img class="icon" src="../img/code.png" alt="</>" />
 
 		<h1>Performance</h1>
 
@@ -19,14 +19,14 @@
 		<li>Reduza imagens usando o <a href="http://www.imgopt.com/">smush.it</a>. Também use o <a href="http://developer.yahoo.com/yslow/">YSlow</a>, que reduz automaticamente todas as imagens para você.</li>
 		<li>Configure apropriadamente o cache dos cabeçalhos.</li>
 		<li>Considere um subdomínio sem cookies para static assets</li>
-		<li>Evite blocos em linha de <code.&lt;script&gt;</code>.</li>
-		<li>CSS deve estar localizado no <code>&lt;head></code> do documento, JavaScript deve estar logo antes da tag <code>&lt;/body></code>.</li>'
+		<li>Evite blocos em linha de <strong>.&lt;script&gt;</strong>.</li>
+		<li>CSS deve estar localizado no <strong>&lt;head></strong> do documento, JavaScript deve estar logo antes da tag <strong>&lt;/body></strong>.</li>'
 		<li>CSS e JavaScript devem estar minificados no lado do servidor. A maioria das pessoas usam o <a href="http://yui.github.io/yuicompressor/">YUI Compressor</a> para isso.</li>
 		<li>Ambos devem ser servidos <a href="https://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/">usando gzip</a></li>
 		<li>CSS devem ser concatenados juntos. Obviamente só pode ser feito com arquivos que compartilham o mesmo tipo de mídia (e.g. screen ou print). O objetivo principal é reduzir o número de conexões HTTP com dependências durante o carregamento da página.</li>
 		<li>JavaScript deve ser concatenado. Enquanto um gerenciador de script ajax seria o ideal (similar ao YUI 3 Loader), é mais complicado de se implementar. No seu lugar, eu recomendo um download singular da maior parte do script usado no site. (Claro, cache apropriado deve ser usado para reter o arquivo, se possível.)</li>
 		<li>Concatenação e minification normalmente ocorrem durante um processo de build automatizado, ao empacotar o código para implantação no palco ou de produção. Muitos usam ferramentas como <a href="http://ant.apache.org/">Ant</a> ou <a href="http://maven.apache.org/">Maven</a>.</li>
-		<li>Evite blocos <code>&lt;script></code> em linha com o HTML. Eles bloqueiam a renderização e são bastante devastadores com o tempo de carregamento de página.</li>
+		<li>Evite blocos <strong>&lt;script></strong> em linha com o HTML. Eles bloqueiam a renderização e são bastante devastadores com o tempo de carregamento de página.</li>
 	</ul>
 
 	<h3>Otimize a execucão do JavaScript</h3>
@@ -43,7 +43,7 @@
 
 	<h3>Alavancagem dos CSS Sprites</h3>
 
-	<p>CSS Sprites normalmente tem uma porção de imagens mescladas juntas em um arquivo único de imagem. Cada parte é revelada usando CSS <code>background-position</code>. Alguns normalmente seriam assim:</p>
+	<p>CSS Sprites normalmente tem uma porção de imagens mescladas juntas em um arquivo único de imagem. Cada parte é revelada usando CSS <strong>background-position</strong>. Alguns normalmente seriam assim:</p>
 
 	<textarea class="brush:css">
 	a.expandbox {
@@ -56,7 +56,7 @@
 	}
 	</textarea>
 
-	<P>É muito comum o uso de sprites para estados de <code>:hover</code>. No caso, será algo assim:</p>
+	<P>É muito comum o uso de sprites para estados de <strong>:hover</strong>. No caso, será algo assim:</p>
 
 	<textarea class="brush:css">
 	a.expandbox:hover { background-position: -50px -20px; }
@@ -115,15 +115,15 @@
 		<li>imagens promocionais (leve cache)</li>
 	</ul>
 
-	<p>Para um melhor cache, alavanque o <code>Expires http header</code>. Aqui um exemplo de futuro distante de Expires header, dizendo ao navegador que esta resposta não será considerada obsoleta até 15 de abril de 2015.</p>
+	<p>Para um melhor cache, alavanque o <strong>Expires http header</strong>. Aqui um exemplo de futuro distante de Expires header, dizendo ao navegador que esta resposta não será considerada obsoleta até 15 de abril de 2015.</p>
 
 	<pre>Expires: Thu, 15 Apr 2015 20:00:00 GMT</pre>
 
-	<p>Se o seu servidor é Apache, use a diretiva <code>ExpiresDefault</code> para configurar uma data de expiração relativa a data atual. Este é um exemplo usando o <code>ExpiresDefault</code>, configurando o Expires date para 1 ano depois da data de requisição.</p>
+	<p>Se o seu servidor é Apache, use a diretiva <strong>ExpiresDefault</strong> para configurar uma data de expiração relativa a data atual. Este é um exemplo usando o <strong>ExpiresDefault</strong>, configurando o Expires date para 1 ano depois da data de requisição.</p>
 
 	<pre>ExpiresDefault "access plus 1 year"</pre>
 
-	<p><code>Expires http header</code> deve ser configurado para um valor entre um mês a partir do presente a um ano (futuro distante) do presente. Cacheamento aplicado em apenas uma exata URL, para uma mudança no nome do arquivo de qualquer ativo vai começar uma nova cópia. Muitos desenvolvedores usam um processo de construção para adicionar um número de versão ou carimbo de tempo, um exemplo disso é o HTML5 Boilerplate. Cada compilação subsequente vai começar uma nova versão em cache, permitindo que você use datas de cache de futuro distante sem se preocupar. <a href="http://code.google.com/speed/page-speed/docs/caching.html#LeverageBrowserCaching ">Google tem bastante detalhes sobre cache do navegador</a>.</p>
+	<p><strong>Expires http header</strong> deve ser configurado para um valor entre um mês a partir do presente a um ano (futuro distante) do presente. Cacheamento aplicado em apenas uma exata URL, para uma mudança no nome do arquivo de qualquer ativo vai começar uma nova cópia. Muitos desenvolvedores usam um processo de construção para adicionar um número de versão ou carimbo de tempo, um exemplo disso é o HTML5 Boilerplate. Cada compilação subsequente vai começar uma nova versão em cache, permitindo que você use datas de cache de futuro distante sem se preocupar. <a href="http://code.google.com/speed/page-speed/docs/caching.html#LeverageBrowserCaching ">Google tem bastante detalhes sobre cache do navegador</a>.</p>
 
 	<h3>Recursos compartilhados em vários domínios</h3>
 
@@ -141,7 +141,7 @@
 
 	<h3>Evite IFRAMEs</h3><!-- como a peste -->
 
-	<p>Iframes são o elemento mais caro para adicionar a uma determinada página. Eles bloqueiam a página de disparar o evento <code>onload</code> até que eles estão completos. Às vezes, são úteis para permitir que outra agência possa lidar com scripts de rastreamento. Por exemplo, a tag do Doubleclick é um iframe, e o administrador pode adicionar rastreamento de pixels em seu painel. Em qualquer caso em que um iframe é adicionado, deve ser anexado ao DOM dinamicamente após a janela de <code>onload</code> foi disparada. <a href="http://developer.yahoo.com/performance/rules.html#iframes">Mais detalhes no site sobre Performance do Yahoo.</a></p>
+	<p>Iframes são o elemento mais caro para adicionar a uma determinada página. Eles bloqueiam a página de disparar o evento <strong>onload</strong> até que eles estão completos. Às vezes, são úteis para permitir que outra agência possa lidar com scripts de rastreamento. Por exemplo, a tag do Doubleclick é um iframe, e o administrador pode adicionar rastreamento de pixels em seu painel. Em qualquer caso em que um iframe é adicionado, deve ser anexado ao DOM dinamicamente após a janela de <strong>onload</strong> foi disparada. <a href="http://developer.yahoo.com/performance/rules.html#iframes">Mais detalhes no site sobre Performance do Yahoo.</a></p>
 
 	<h3>Interação com serviços de terceiros</h3>
 
@@ -153,7 +153,7 @@
 
 	<p>Conteúdo de backup deve estar no mesmo lugar do Flash em todos os casos para maximizar o trabalho do SEO. Para XML-driven, o backup do conteúdo deve ser alavancando com o mesmo arquivo XML, para garantir a consistência dos dados.</p>
 
-	<p>Todas as substituições devem ser feitas usando SWFObject, mas sem tags em linha <code>script</code>. Inicialização <code>SWFObject</code> deve executar após o evento DOM Ready. Versões do player devem estar ajustadas para no mínimo v9, para garantir compatibilidade com AS3.</p>
+	<p>Todas as substituições devem ser feitas usando SWFObject, mas sem tags em linha <strong>script</strong>. Inicialização <strong>SWFObject</strong> deve executar após o evento DOM Ready. Versões do player devem estar ajustadas para no mínimo v9, para garantir compatibilidade com AS3.</p>
 
 	<h2 id="browserperformance">Estratégia de Performance Cross-Browser</h2>
 
@@ -174,7 +174,7 @@
 
 	<ol>
 		<li>O navegador mais lento suportado deve carregar totalmente a página com o cache vazio em 5 segundos.</li>
-		<li>Estados <code>hover</code> (e outras mudanças 'instantâneas') devem responder com 100ms.</li>
+		<li>Estados <strong>hover</strong> (e outras mudanças 'instantâneas') devem responder com 100ms.</li>
 		<li>Animações devem surgir suavemente, com jumpiness ocorrendo &lt; 15% do tempo (em todos os navegadores).</li>
 	</ol>
 

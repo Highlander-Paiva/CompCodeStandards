@@ -4,7 +4,7 @@
 <section id="css">
 
 	<div class="intro has-icon">
-		<img class="icon" src="img/layout/icon-curly.png" alt="{}" />
+		<img class="icon" src="../img/code.png" alt="</>" />
 		<h1>CSS</h1>
 
     <p>O segundo componente de uma página web é a informação de apresentação contida na Folha de Estilo em Cascata (do inglês <abbr title="Cascading Style Sheets">CSS</abbr>). A implementação bem sucedida de CSS nos navegadores deu um controle abrangente sobre o aspecto visual de seus sites a uma geração inteira de profissionais web.</p>
@@ -12,11 +12,11 @@
     <p>Assim como a informação da página é semânticamente descrita pela <a href="#markup">marcação HTML</a>, o CSS define todos os aspectos de apresentação atráves da descrição de suas propriedades visuais. CSS é poderoso, pois suas propriedades são misturadas e combinadas por identificadores que controlam o layout e as características visuais da página, formando camadas de regras de estilo (a "cascata").</p>
 	</div>
 
-	<h3>Principios Gerais de Codificação</h3>
+	<h2>Principios Gerais de Codificação</h2>
 
 	<ul>
-    <li>Carregue seu CSS através de arquivos externos, utilizando o menor número de arquivos possível, e sempre de dentro do elemento <code>&lt;head&gt;</code> da página.</li>
-		<li>Use o elemento <code>&lt;link&gt;</code>, nunca @import.</li>
+    <li>Carregue seu CSS através de arquivos externos, utilizando o menor número de arquivos possível, e sempre de dentro do elemento <strong>&lt;head&gt;</strong> da página.</li>
+		<li>Use o elemento <strong>&lt;link&gt;</strong>, nunca @import.</li>
 
 			<figure class="preCode">Incluindo a folha de estilo</figure>
 			<textarea class="brush:html">
@@ -30,15 +30,15 @@
 
 			</li>
 
-    <li>Não inclua estilos em linha (inline) no documento, nem elementos <code>&lt;style&gt;</code>. Fica mais difícil rastrear as regras.</li>
-    <li>Use um CSS reset (como o presente no H5BP ou o <a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyers reset</a>) para equalizar as diferenças entre os navegadores.</li>
+    <li>Não inclua estilos em linha (inline) no documento, nem elementos <strong>&lt;style&gt;</strong>. Fica mais difícil rastrear as regras.</li>
+    <li>Use um CSS reset (como o presente no h4BP ou o <a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyers reset</a>) para equalizar as diferenças entre os navegadores.</li>
     <li>Use um arquivo de normalização de fonte como o <a href="http://yuilibrary.com/yui/docs/cssfonts/">YUI fonts.css</a>.</li>
     <li>Elementos que ocorrem uma única vez dentro de um documento devem utilizar ID, os demais devem utilizam classes.</li>
     <li>Entenda <a href="http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html">cascata e especificidade de seletores</a> para que você possa escrever um código mais conciso e efetivo.</li>
-    <li>Escreva seletores que são otimizados para performance. Onde possível, evite seletores caros, como por exemplo o seletor curinga - <code>*</code>. Evite também qualificar seletores de ID - <code>div#myid</code>, ou seletores de classe <code>table.results</code>. Isso é especialmente importante em aplicações web onde performance é soberana e pode haver milhares ou até mesmo dezenas de milhares de elementos DOM. Leia mais em <a href="https://developer.mozilla.org/en/Writing_Efficient_CSS">escrevendo CSS eficiente</a> no <abbr title="Mozilla Developer Center">MDC</a>.</li>
+    <li>Escreva seletores que são otimizados para performance. Onde possível, evite seletores caros, como por exemplo o seletor curinga - <strong>*</strong>. Evite também qualificar seletores de ID - <strong>div#myid</strong>, ou seletores de classe <strong>table.results</strong>. Isso é especialmente importante em aplicações web onde performance é soberana e pode haver milhares ou até mesmo dezenas de milhares de elementos DOM. Leia mais em <a href="https://developer.mozilla.org/en/Writing_Efficient_CSS">escrevendo CSS eficiente</a> no <abbr title="Mozilla Developer Center">MDC</a>.</li>
 	</ul>
 
-	<h3>Modelo CSS das caixas</h3>
+	<h2>Modelo CSS das caixas</h2>
 
 	<p>Conhecimento íntimo, compreensão do CSS e ter uma boa base no modelo de caixa do navegador, são necessários para conquistar os fundamentos sobre os layouts CSS.</p>
 
@@ -47,11 +47,11 @@
 		<figcaption><small>Modelo CSS de caixa em 3D</small> diagrama por <a href="http://hicksdesign.co.uk/boxmodel/">Jon Hicks</a>.</small></figcaption>
 	</figure>
 
-	<h3>CSS Validação</h3>
+	<h2>CSS Validação</h2>
 
 	<p>Geralmente não utilizamos o <a href="http://jigsaw.w3.org/css-validator/">validador da W3C</a>.</p>
 
-	<h3>Formatação do CSS</h3>
+	<h2>Formatação do CSS</h2>
 
 	<p>Mantenha a formatação dos seletores CSS em uma mesma linha e cada propriedade em sua própria linha. As declarações devem ser identadas.</p>
 
@@ -73,11 +73,11 @@
 
     <p>No caso de um ambiente com vários desenvolvedores, CSS em uma única linha deve ser evitado por causar problemas com o controle de versão do arquivo.</p>
 
-	<h4>Alfabetizar</h4>
+	<h3>Alfabetizar</h3>
 
 	<p>Se você for um obcecado por performance, <a href="http://www.barryvan.com.au/2009/08/css-minifier-and-alphabetiser/">alfabetize as propriedades do CSS, assim você aumenta as chances de maiores padrões repetitivos estarem presentes para auxiliar na compressão GZIP</a>.</p>
 
-	<h3>Classes vs. IDs</h3>
+	<h2>Classes vs. IDs</h2>
 
 	<p>Você só deve dar atributos ID para um elemento se ele for único. Eles devem ser aplicados apenas para este elemento e mais nenhum outro. Classes podem ser aplicadas em múltiplos elementos quando estes compartilham as mesmas propriedades de estilo. Elementos que devem parecer e funcionar da mesma forma podem ter o mesmo nome de classe.</p>
 
@@ -89,11 +89,11 @@
 		</ul>
 	</textarea>
 
-	<h3>Convenção de nomenclatura para seletores</h3>
+	<h2>Convenção de nomenclatura para seletores</h2>
 
-	<p>Prefira sempre dar nome a algo pela natureza do <strong>que é</strong>, ao invés do <strong>que ele parece</strong>, seja ele um ID ou uma classe. Por exemplo, um nome de classe <code>bigBlueText</code> para uma nota especial em uma página é algo totalmente sem sentido se tiver sido alterado para ter um texto menor com a cor vermelha. Usando uma convenção mais inteligente como <code>noteText</code> é bem melhor, porque quando ocorrerem mudanças visuais, o nome continuará a fazer sentido.</p>
+	<p>Prefira sempre dar nome a algo pela natureza do <strong>que é</strong>, ao invés do <strong>que ele parece</strong>, seja ele um ID ou uma classe. Por exemplo, um nome de classe <strong>bigBlueText</strong> para uma nota especial em uma página é algo totalmente sem sentido se tiver sido alterado para ter um texto menor com a cor vermelha. Usando uma convenção mais inteligente como <strong>noteText</strong> é bem melhor, porque quando ocorrerem mudanças visuais, o nome continuará a fazer sentido.</p>
 
-	<h4>Método <abbr title="block, element, modifier">BEM</abbr></h4>
+	<h3>Método <abbr title="block, element, modifier">BEM</abbr></h3>
 
 	<p>A sigla BEM significa block, element, modifier e segue essas propriedades para definir uma nova metodologia de criação de nomes para classes de folhas de estilo.</p>
 
@@ -114,7 +114,7 @@
 		</form>
 	</textarea>
 
-	<h4>Prefixo da CompJúnior</h4>
+	<h3>Prefixo da CompJúnior</h3>
 
 	<p>Recomendamos o uso do prefixo "cj-" nas classes desenvolvidas pela CompJúnior, evitando assim que exista classes com nome conflitantes a outras classes desenvolvida por terceiros.</p>
 
@@ -126,27 +126,27 @@
 		</form>
 	</textarea>
 
-	<h3>Seletores</h3>
+	<h2>Seletores</h2>
 
 	<p>Os <a href="http://www.w3.org/TR/2009/PR-css3-selectors-20091215/">Seletores CSS Nível 3</a> apresentam um novo conjunto de seletores CSS que são extremamente úteis para atingir um determinado elemento.</p>
 
-	<h4>Pseudo-classes</h4>
+	<h3>Pseudo-classes</h3>
 
-	<p><a href="http://www.w3.org/TR/css3-selectors/#pseudo-classes">Pseudo-classes</a> possibilitam que você estilize dinamicamente um conteúdo. Algumas pseudo-classes existem desde o CSS1 (<code>:visited, :hover</code>, etc.) e no CSS2 (<code>:first-child, :lang</code>). No CSS3, 16 novas pseudo-classes foram adicionadas a lista e são especialmente úteis para estilar dinamicamente um conteúdo.</p>
+	<p><a href="http://www.w3.org/TR/css3-selectors/#pseudo-classes">Pseudo-classes</a> possibilitam que você estilize dinamicamente um conteúdo. Algumas pseudo-classes existem desde o CSS1 (<strong>:visited, :hover</strong>, etc.) e no CSS2 (<strong>:first-child, :lang</strong>). No CSS3, 16 novas pseudo-classes foram adicionadas a lista e são especialmente úteis para estilar dinamicamente um conteúdo.</p>
 
-	<h4>Combinadores &amp; Atributos Seletores</h4>
+	<h3>Combinadores &amp; Atributos Seletores</h3>
 
 	<p><a href="http://www.w3.org/TR/css3-selectors/#combinators">Combinadores</a> fornecem atalhos para a seleção de elementos que são descendentes, filhos, ou irmãos.</p>
 
 	<p><a href="http://www.w3.org/TR/css3-selectors/#attribute-selectors">Atributos Seletores</a> são ótimos para localizar elementos que possuam um atributo específico e/ou um valor específico. Conhecimento de expressões regulares ajudam com os atributos seletores.</p>
 
-	<h4>Especificidade</h4>
+	<h3>Especificidade</h3>
 
 	<p>Navegadores <a href="http://tableless.com.br/pontuacao-especificidade-css/">calculam a especificidade</a> para determinar quais regras do CSS devem ser aplicadas. Se dois seletores aplicam uma regra para o mesmo elemento, o que tiver com <strong>maior especificidade vence</strong>.</p>
 
 	<p>IDs tem uma especificidade maior do que os de seletores de atributo, e seletores de classe têm maior especificidade do que qualquer número de elementos de seleção. Sempre tente usar IDs para aumentar a especificidade, há momentos em que podemos tentar aplicar uma regra CSS a um elemento e ela não funciona, não importa o que tentamos. Isso acontece provavelmente porque a especificidade do seletor usado é inferior ao outro e as propriedades do mais alto estão tomando precedência sobre aqueles que você deseja aplicar. Isto é mais comum quando se trabalha com uma folha de estilos maior e complexa, e geralmente não é um grande problema quando se trata de projetos menores.</p>
 
-	<h5>Calculando especificidade</h5>
+	<h4>Calculando especificidade</h4>
 
 	<p>Ao trabalhar com uma larga e complexa folha de estilos, sempre é útil saber como calcular o valor de especificidade de um seletor para salvar o seu tempo e tornar os seus seletores mais eficientes.</p>
 
@@ -167,11 +167,11 @@
 		<li><a href="http://www.brunildo.org/test/IEASpec.html#a">IE bugs de especificidade</a></li>
 	</ul>
 
-	<p>Usando <code>!important</code> você substitui todas as especificidades, não importa o quão alto for. Nós evitamos usá-lo por este motivo. Na maioria das vezes não é necessário, mesmo se você precisar substituir um seletor em uma folha de estilo que não tem acesso. Normalmente existem outras formas de substituir um seletor sem usar <code>!important</code>. Se possível, evite-o.</p>
+	<p>Usando <strong>!important</strong> você substitui todas as especificidades, não importa o quão alto for. Nós evitamos usá-lo por este motivo. Na maioria das vezes não é necessário, mesmo se você precisar substituir um seletor em uma folha de estilo que não tem acesso. Normalmente existem outras formas de substituir um seletor sem usar <strong>!important</strong>. Se possível, evite-o.</p>
 
-	<h3>Pixels vs. Ems</h3>
+	<h2>Pixels vs. Ems</h2>
 
-	<p>Nós usamos <code>px</code> como unidade de medida para definir o <code>font-size</code>, porque oferece o controle absoluto sobre o texto. Nós percebemos que a unidade de medida <code>em</code> se tornou popular para acomodar o Internet Explorer 6, já que não redimensiona pixel com base em texto. No entanto, agora todos os principais navegadores (incluindo <abbr title="Internet Explorer 7">IE7</abbr> e <abbr title="Internet Explorer 8">IE8</abbr>) suportam texto redimensionado com unidade baseada em pixel e/ou zoom na página inteira. Desde que o <abbr title="Internet Explorer 6">IE6</abbr> foi considerado obsoleto, é preferível usar tamanho em pixels. A unidade <code>line-height</code> também deve ser usada, porque não herda um valor percentual do seu elemento pai, mas é baseado no multiplicador do <code>font-size</code>.</p>
+	<p>Nós usamos <strong>px</strong> como unidade de medida para definir o <strong>font-size</strong>, porque oferece o controle absoluto sobre o texto. Nós percebemos que a unidade de medida <strong>em</strong> se tornou popular para acomodar o Internet Explorer 6, já que não redimensiona pixel com base em texto. No entanto, agora todos os principais navegadores (incluindo <abbr title="Internet Explorer 7">IE7</abbr> e <abbr title="Internet Explorer 8">IE8</abbr>) suportam texto redimensionado com unidade baseada em pixel e/ou zoom na página inteira. Desde que o <abbr title="Internet Explorer 6">IE6</abbr> foi considerado obsoleto, é preferível usar tamanho em pixels. A unidade <strong>line-height</strong> também deve ser usada, porque não herda um valor percentual do seu elemento pai, mas é baseado no multiplicador do <strong>font-size</strong>.</p>
 
 	<figure class="preCode">Correto</figure>
 	<textarea class="brush:css">
@@ -190,9 +190,9 @@
 		}
 	</textarea>
 
-	<h3>Internet Explorer Bugs</h3>
+	<h2>Internet Explorer Bugs</h2>
 
-	<p>Inevitavelmente, quando todos os outros navegadores parecem funcionar corretamente, qualquer versão do Internet Explorer irá apresentar algum bug absurdo, retardando o tempo de desenvolvimento. Enquanto nós encorajamos a solução de problemas e a construção de um código que irá funcionar em todos navegadores sem modificações especiais, às vezes é necessário usar comentários condicionais <code>if IE</code> como ganchos em nossas folhas de estilos. <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/">Leia mais em paulirish.com</a>
+	<p>Inevitavelmente, quando todos os outros navegadores parecem funcionar corretamente, qualquer versão do Internet Explorer irá apresentar algum bug absurdo, retardando o tempo de desenvolvimento. Enquanto nós encorajamos a solução de problemas e a construção de um código que irá funcionar em todos navegadores sem modificações especiais, às vezes é necessário usar comentários condicionais <strong>if IE</strong> como ganchos em nossas folhas de estilos. <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/">Leia mais em paulirish.com</a>
 
 	<figure class="preCode">Corrigindo o IE</figure>
 
@@ -209,7 +209,7 @@
 		.ie6 .box { margin-left: 10px; }
 	</textarea>
 
-	<p>Se você estiver usando HTML5 (e o <a href="#h5bp">HTML5 Boilerplate</a>) nós encorajamos o uso da biblioteca JavaScript <a href="http://www.modernizr.com/">Modernizer</a> e este padrão:
+	<p>Se você estiver usando HTML5 (e o <a href="#h4bp">HTML5 Boilerplate</a>) nós encorajamos o uso da biblioteca JavaScript <a href="http://www.modernizr.com/">Modernizer</a> e este padrão:
 
 	<textarea class="brush:html">
 		<!--[if lt IE 7]> <html class="no-js ie ie6" lang="en"> <![endif]-->
@@ -219,9 +219,9 @@
 		<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 	</textarea>
 
-	<h3>Abreviação</h3>
+	<h2>Abreviação</h2>
 
-	<p>Em geral, é preferível a abreviação do CSS por causa da sua concisão e possibilidade de mais tarde voltar e adicionar em valores que já estão presentes, como é o caso do <code>margin</code> e <code>padding</code>. Desenvolvedores devem estar cientes do acrónimo <abbr title="Top Right Bottom Left">TRBL</abbr>, denotando a ordem em que os lados de um elemento são definidas, em sentido horário: topo, para direita, abaixo e para a esquerda. Se <em>bottom</em> não estiver definido, ele herda o valor do <em>top</em>. Da mesma maneira, se <em>left</em> não for definido, ele herdará o valor do <em>right</em>. Se apenas o valor de <em>top</em> for definido, todos os outros lados herdam o mesmo valor declarado.</p>
+	<p>Em geral, é preferível a abreviação do CSS por causa da sua concisão e possibilidade de mais tarde voltar e adicionar em valores que já estão presentes, como é o caso do <strong>margin</strong> e <strong>padding</strong>. Desenvolvedores devem estar cientes do acrónimo <abbr title="Top Right Bottom Left">TRBL</abbr>, denotando a ordem em que os lados de um elemento são definidas, em sentido horário: topo, para direita, abaixo e para a esquerda. Se <em>bottom</em> não estiver definido, ele herda o valor do <em>top</em>. Da mesma maneira, se <em>left</em> não for definido, ele herdará o valor do <em>right</em>. Se apenas o valor de <em>top</em> for definido, todos os outros lados herdam o mesmo valor declarado.</p>
 
 	<p class="normalize">Para mais informações sobre como reduzir a redundância de código na folha de estilo, e como usar abreviação em geral:</p>
 
@@ -231,7 +231,7 @@
 		<li><a href="http://dustindiaz.com/css-shorthand">http://dustindiaz.com/css-shorthand</a></li>
 	</ul>
 
-	<h3>Imagens</h3>
+	<h2>Imagens</h2>
 
 	<ul>
 		<li>Para repetir imagens, use <a href="http://www.iandevlin.com/blog/2010/03/webdev/fading-issue-with-repeating-background-transparent-image-in-internet-explorer">algo maior do que 1x1 pixels</a>.</li>
@@ -247,21 +247,21 @@
 
 	<hr />
 
-	<h3>Estilos gerais de fonte e texto</h3>
+	<h2>Estilos gerais de fonte e texto</h2>
 
-	<h4>Títulos</h4>
+	<h3>Títulos</h3>
 
 	<ul>
-		<li>Definir um estilo padrão para títulos <code>h1-h6</code>, incluindo cabeçalhos com links. É útil declarar estes no topo do seu documento CSSS e modificá-los conforme for necessário para manter a consistência em todo o site.</li>
-		<li>Cabeçalhos devem ter uma hierarquia que indicam diferentes níveis de importância de cima para baixo, começando com <code>h1</code> tendo o maior tamanho de fonte</li>
-		<li>SEO: Para se ter uma ideia aproximada de como a hierarquia da página está organizada e legível, use a barra de ferramentas de desenvolvedor (Developer Toolbar) do navegador para desabilitar o CSS. Você vai acabar vendo apenas o seu site com os textos de todas as suas tags <code>h1-h6</code>, <code>strong</code>, <code>em</code> etc.</li>
+		<li>Definir um estilo padrão para títulos <strong>h1-h6</strong>, incluindo cabeçalhos com links. É útil declarar estes no topo do seu documento CSSS e modificá-los conforme for necessário para manter a consistência em todo o site.</li>
+		<li>Cabeçalhos devem ter uma hierarquia que indicam diferentes níveis de importância de cima para baixo, começando com <strong>h1</strong> tendo o maior tamanho de fonte</li>
+		<li>SEO: Para se ter uma ideia aproximada de como a hierarquia da página está organizada e legível, use a barra de ferramentas de desenvolvedor (Developer Toolbar) do navegador para desabilitar o CSS. Você vai acabar vendo apenas o seu site com os textos de todas as suas tags <strong>h1-h6</strong>, <strong>strong</strong>, <strong>em</strong> etc.</li>
 	</ul>
 
-	<h4>Links</h4>
+	<h3>Links</h3>
 
 	<ul>
 		<li>Estilos padrões para links devem ser declarados e ser diferentes do estilo de texto principal, e com diferentes estilos para o estado hover.</li>
-		<li>Quando estilamos links com sublinhados usamos <code>border-bottom</code>, algum padding e <code>text-decoration: none;</code>. Visualmente fica melhor.</li>
+		<li>Quando estilamos links com sublinhados usamos <strong>border-bottom</strong>, algum padding e <strong>text-decoration: none;</strong>. Visualmente fica melhor.</li>
 	</ul>
 
 	<!-- #### WEB TYPOGRAPHY SECTION #### -->
@@ -274,13 +274,13 @@
 
 	<p>Abaixo alguns métodos populares de incorporar fontes customizadas, listadas em ordem de nossa preferência de implementação:</p>
 
-	<h3>@font-face</h3>
+	<h2>@font-face</h2>
 
 	<p>A regra <a href="http://www.w3.org/TR/2011/WD-css3-fonts-20110324/#font-face-rule">@font-face</a> permite que você defina fontes customizadas. Ela foi primeiramente lançada nas especificações do CSS2, mas foi removida do CSS2.1. Atualmente, é um projeto de recomendação para o CSS3.</p>
 
-	<p>Nossa primeira e mais preferível escolha para customizar fontes na web é a <code>@font-face</code>, simplesmente porque ele é parte do projeto de trabalho CSS Módulo Fontes, o que significa que continuará a crescer em popularidade com a medida que cresce o suporte ao navegador, e irá melhorar a facilidade de uso, tornando se mais estável.</p>
+	<p>Nossa primeira e mais preferível escolha para customizar fontes na web é a <strong>@font-face</strong>, simplesmente porque ele é parte do projeto de trabalho CSS Módulo Fontes, o que significa que continuará a crescer em popularidade com a medida que cresce o suporte ao navegador, e irá melhorar a facilidade de uso, tornando se mais estável.</p>
 
-	<p>Para agora, quando usar <code>@font-face</code>, é recomendado declarar o código fonte para cada formato de fonte. Isso é importante se você precisa trabalhar com um número maior de navegadores, embora não seja obrigatório.</p>
+	<p>Para agora, quando usar <strong>@font-face</strong>, é recomendado declarar o código fonte para cada formato de fonte. Isso é importante se você precisa trabalhar com um número maior de navegadores, embora não seja obrigatório.</p>
 
 	<p class="normalize">Os formatos de fonte incluem as especificações abaixo:</p>
 
@@ -293,7 +293,7 @@
 		<li><strong>svg</strong>, <strong>svgz</strong>: Fonte SVG</li>
 	</ul>
 
-	<h4>@font-face à prova de bala</h4>
+	<h3>@font-face à prova de bala</h3>
 
 	<p>Para uma compatibilidade com todos os browsers use a nova sintaxe do Fontsprings', <a href="http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax">@font-face à prova de bala</a> (<em>última versão de 21/02/11</em>).</p>
 
@@ -313,13 +313,13 @@
 
 	<p>Aqui uma <a href="http://www.thecssninja.com/demo/css_fontface/">demo funcional</a> usando a última versão.</p>
 
-	<h4>Compatibilidade Cross-Browser</h4>
+	<h3>Compatibilidade Cross-Browser</h3>
 
 	<p>Safari, <abbr title="Internet Explorer version 6-9">IE 6-9</abbr>, <abbr title="Internet Explorer Compatibility Modes">IE 9 Modo de Compatibilidade</abbr>, Firefox, Chrome, iOS, Android, Opera.</p>
 
-	<h4>Prevenindo o Modo de Compatibilidade</h4>
+	<h3>Prevenindo o Modo de Compatibilidade</h3>
 
-	<p>Alguns <abbr title="Internet Explorer">IE</abbr> podem ter vontade própria e mudar para o modo de compatibilidade sem você saber. Incluir o seguinte código no cabeçalho do seu site <code>&lt;head&gt;</code> pode evitar que ele use o modo de compatibilidade como padrão:</p>
+	<p>Alguns <abbr title="Internet Explorer">IE</abbr> podem ter vontade própria e mudar para o modo de compatibilidade sem você saber. Incluir o seguinte código no cabeçalho do seu site <strong>&lt;head&gt;</strong> pode evitar que ele use o modo de compatibilidade como padrão:</p>
 
 	<textarea class="brush:html">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -327,12 +327,12 @@
 
 	<hr />
 
-	<h4>Dicas para o @font-face</h4>
+	<h3>Dicas para o @font-face</h3>
 
 	<ul>
 		<li>IE 6–8 apenas será aceito com uma fonte TrueType empacotada como uma EOT.</li>
-		<li><code>font-weight</code> e <code>font-style</code> tem diferentes significados com o <code>@font-face</code>.
-			Uma declaração como <code>font-weight: bold;</code> significa que esta é a versão em negrito da fonte, ao invés de aplicar o negrito a este texto.</li>
+		<li><strong>font-weight</strong> e <strong>font-style</strong> tem diferentes significados com o <strong>@font-face</strong>.
+			Uma declaração como <strong>font-weight: bold;</strong> significa que esta é a versão em negrito da fonte, ao invés de aplicar o negrito a este texto.</li>
 		<li><a href="http://paulirish.com/2010/font-face-gotchas/">Dicas para @font-face</a></li>
 	</ul>
 
@@ -356,13 +356,13 @@
 
 	<hr />
 
-	<h3>Google WebFonts API &amp; Webfont Loader</h3>
+	<h2>Google WebFonts API &amp; Webfont Loader</h2>
 
-	<p>Há duas opções disponíveis no <a href="https://code.google.com/apis/webfonts/">Google Webfonts</a>. Ambas as opções têm suas desvantagens, claro, mas eles podem ser tão boas como o <code>@font-face</code>, e isso depende da necessidade do seu projeto.</p>
+	<p>Há duas opções disponíveis no <a href="https://code.google.com/apis/webfonts/">Google Webfonts</a>. Ambas as opções têm suas desvantagens, claro, mas eles podem ser tão boas como o <strong>@font-face</strong>, e isso depende da necessidade do seu projeto.</p>
 
-	<h4>Webfonts API</h4>
+	<h3>Webfonts API</h3>
 
-	<p><a href="https://code.google.com/apis/webfonts/docs/getting_started.html">Google's Webfonts API</a> essencialmente faz a mesma coisa que o <code>@font-face</code>, ele apenas faz todo o trabalho chato para você, provendo suporte mais amplo aos navegadores. A principal desvantagem deste método é a pequena biblioteca de fontes que ele possuí. Para fazê-los funcionar tudo que você precisa fazer é incluir a folha de estilo + o nome da fonte.</p>
+	<p><a href="https://code.google.com/apis/webfonts/docs/getting_started.html">Google's Webfonts API</a> essencialmente faz a mesma coisa que o <strong>@font-face</strong>, ele apenas faz todo o trabalho chato para você, provendo suporte mais amplo aos navegadores. A principal desvantagem deste método é a pequena biblioteca de fontes que ele possuí. Para fazê-los funcionar tudo que você precisa fazer é incluir a folha de estilo + o nome da fonte.</p>
 
 	<textarea class="brush:html">
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Font+Name">
@@ -416,7 +416,7 @@
 		<li>Alto suporte dos navegadores</li>
 		<li>Pode ser combinada com o Typekit</li>
 		<li>Customizável quando usada com o Font Loader</li>
-		<li>API faz a mesma coisa que o <code>@font-face</code></li>
+		<li>API faz a mesma coisa que o <strong>@font-face</strong></li>
 	</ul>
 
 	<strong>Contras</strong>
@@ -540,7 +540,7 @@
 		<li><a href="http://developer.apple.com/fonts/TTRefMan/">Apple True Type - Referência</a> </li>
 	</ul>
 
-	<h3>Usando CSS3</h3>
+	<h2>Usando CSS3</h2>
 
 	<p>Você pode fazer um monte de coisas com as novas características adicionadas na especificação do CSS3, muitas das quais ainda não são totalmente suportadas por todos os principais navegadores. Isto não quer dizer que você não pode usá-las hoje. Para as coisas que ainda não há suporte, existem bibliotecas fallback ou outros 'polyfills' para preencher os buracos onde os navegadores não suportam o novo recurso.</p>
 

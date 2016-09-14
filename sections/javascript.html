@@ -3,7 +3,7 @@
 <section id="js">
 
 	<div class="intro has-icon">
-		<img class="icon" src="img/layout/code.png" alt="</>" />
+		<img class="icon" src="../img/code.png" alt="</>" />
 
 		<h1>JavaScript</h1>
 
@@ -20,24 +20,24 @@
 	<h2>Princípios Gerais de Código</h2>
 
 	<ul>
-		<li>99% do código deve ficar em arquivos externos. Eles devem ser incluídos no FIM da tag <code>body</code> para melhor performance.</li>
-		<li>Não confie na string <code>user-agent</code>. Faça a detecção usando o recurso adequado. (Mais em <a href="http://diveintohtml5.info/detect.html">Dive Into HTML5: Detecção</a> &amp; <a href="http://api.jquery.com/jQuery.support/">jQuery.support docs</a>)</li>
-		<li>Não utilize <code>document.write()</code>.</li>
+		<li>99% do código deve ficar em arquivos externos. Eles devem ser incluídos no FIM da tag <strong>body</strong> para melhor performance.</li>
+		<li>Não confie na string <strong>user-agent</strong>. Faça a detecção usando o recurso adequado. (Mais em <a href="http://diveintohtml5.info/detect.html">Dive Into HTML5: Detecção</a> &amp; <a href="http://api.jquery.com/jQuery.support/">jQuery.support docs</a>)</li>
+		<li>Não utilize <strong>document.write()</strong>.</li>
 		<li>Todas as variáveis boleanas devem começar com "is".
 			<figure class="preCode">Teste para condições positivas</figure>
 			<textarea class="brush:js">
 			isValid = (test.value >= 4 && test.success);
 			</textarea>
 		</li>
-		<li>Nomeie variáveis e funções de forma lógica. Por exemplo: <code>popUpWindowForAd</code>, ao invés <code>myWindow</code>.</li>
-        <li>Não faça reduções ao nomear variáveis. Com exceção dos tradicionais <code>i</code> etc. Para loops <code>for</code>, variáveis devem ter nomes longos o suficiente para ter significado. </li>
+		<li>Nomeie variáveis e funções de forma lógica. Por exemplo: <strong>popUpWindowForAd</strong>, ao invés <strong>myWindow</strong>.</li>
+        <li>Não faça reduções ao nomear variáveis. Com exceção dos tradicionais <strong>i</strong> etc. Para loops <strong>for</strong>, variáveis devem ter nomes longos o suficiente para ter significado. </li>
 		<li>A documentação deve seguir a estrutura do <a href="http://www.naturaldocs.org/documenting.html">NaturalDocs</a>.</li>
 		<li>Constantes ou variáveis de configuração (como duração de animações etc.) devem ficam no começo do arquivo.</li>
 
 		<li>Esforce-se para criar funções que possam ser generalizadas, ter parâmetros e valores de retorno. Isto permite a reutilização substancial do código e, quando combinada com includes ou scripts externos, podem reduzir a sobrecarga quando os scripts tem necessidade de mudar. Por exemplo, em vez da difícil codificação de uma janela pop-up com tamanho de janela, opções, urls, considere apenas criar uma função que tenha tamanho, url e opções como variáveis.</li>
 
 		<li>Comente o seu código! Isso ajuda a reduzir o tempo gasto com soluções de problemas em funções JavaScript.</li>
-		<li>Não perca seu tempo com <code>&lt;!-- --&gt;</code>, comentários que cercam sua linha javascript, a menos que você se preocupe com o Netscape 4.&nbsp;:)</li>
+		<li>Não perca seu tempo com <strong>&lt;!-- --&gt;</strong>, comentários que cercam sua linha javascript, a menos que você se preocupe com o Netscape 4.&nbsp;:)</li>
 		<li>Organize seu código com o <a href="https://nandovieira.com.br/design-patterns-no-javascript-singleton">Object Literal/Singleton</a>, com o <a href="http://www.yuiblog.com/blog/2007/06/12/module-pattern/">Module Pattern</a>, ou com o <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript">Object with constructors</a>.</li>
 
 	  <li>Reduza variáveis globais - quanto menos você as criar, melhor. Geralmente uma para o espaço de sua aplicação é um bom número.
@@ -208,7 +208,7 @@
 
 	<h2>Variáveis, ID &amp; Classes</h2>
 
-	<p>Todas as variáveis JavaScript devem ser escritas apenas com minúsculas ou camelCase. A única exceção para este caso é se estiver criando Constructor Functions, quais começam com maiúsculas por tradição. Todo <code>id</code> e declarações <code>class</code> em CSS, devem ser escritas usando apenas minúsculas. Não use traços, nem sublinhados.</p>
+	<p>Todas as variáveis JavaScript devem ser escritas apenas com minúsculas ou camelCase. A única exceção para este caso é se estiver criando Constructor Functions, quais começam com maiúsculas por tradição. Todo <strong>id</strong> e declarações <strong>class</strong> em CSS, devem ser escritas usando apenas minúsculas. Não use traços, nem sublinhados.</p>
 
 	<h3>Delegação de Eventos</h3>
 

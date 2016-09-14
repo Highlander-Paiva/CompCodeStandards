@@ -3,7 +3,7 @@
 <section id="accessibility">
 
 	<div class="intro has-icon">
-		<img class="icon" src="img/layout/icon-curly.png" alt="{}" />
+		<img class="icon" src="../img/code.png" alt="</>" />
 
 		<h1>Acessibilidade</h1>
 
@@ -23,7 +23,7 @@
 
 	<p>Estas áreas são todas estreitamente relacionadas para que possa ser mais fácil discriminá-las com base em tipos de projeto. Aqui algumas coisas que devem ser feitas para alcançar uma página web acessível:</p>
 
-	<h3>Pular Navegação</h3>
+	<h2>Pular Navegação</h2>
 
 	<p>Se o seu site possuí elementos de navegação antes do conteúdo principal, providencie um link para os leitores de tela para "Pular para o conteúdo principal". Esse é um link que normalmente é escondido com o uso de CSS, mas será exibido no leitor de tela para pular a navegação e indo direto pro conteúdo.</p>
 
@@ -53,23 +53,23 @@
 		</div>
 	</textarea>
 
-	<h3>Tab Index</h3>
+	<h2>Tab Index</h2>
 
-	<p>O índice-guia de um documento começa com o primeiro link do documento e funciona através de todos eles do início até o fim. Este é frequentemente inutilizável e não intuitivo na forma que os elementos aparecem na tela. Se assegure que a ordem de tabulação dos links e elementos ativos é lógica, usando o atributo <code>tabindex</code>. Elementos de formulário devem ser tabulados através da ordem que um usuário espera concluí-lo, não necessariamente na ordem das tags em HTML.</p>
+	<p>O índice-guia de um documento começa com o primeiro link do documento e funciona através de todos eles do início até o fim. Este é frequentemente inutilizável e não intuitivo na forma que os elementos aparecem na tela. Se assegure que a ordem de tabulação dos links e elementos ativos é lógica, usando o atributo <strong>tabindex</strong>. Elementos de formulário devem ser tabulados através da ordem que um usuário espera concluí-lo, não necessariamente na ordem das tags em HTML.</p>
 
-	<h3>Siglas/Abreviações</h3>
+	<h2>Siglas/Abreviações</h2>
 
-	<p>Se o seu conteúdo usa abreviações ou siglas, elas devem ser expandidas usando as tags <code>abbr</code> e <code>acronym</code>.
+	<p>Se o seu conteúdo usa abreviações ou siglas, elas devem ser expandidas usando as tags <strong>abbr</strong> e <strong>acronym</strong>.
 
-	<h3>Imagens</h3>
+	<h2>Imagens</h2>
 
-	<p>Todas as imagens devem ter o atributo <code>alt</code>. Atributos <code>alt</code> dão significado e descrevem o conteúdo da imagem. Se a imagem é puramente decorativa, atributos <code>alt</code> devem ser marcados em branco usando <code>alt=""</code>. Não coloque algo como <code>alt="Esta imagem é apenas decorativa"</code>, isso será irritante para o usuário que utiliza leitores de tela.</p>
+	<p>Todas as imagens devem ter o atributo <strong>alt</strong>. Atributos <strong>alt</strong> dão significado e descrevem o conteúdo da imagem. Se a imagem é puramente decorativa, atributos <strong>alt</strong> devem ser marcados em branco usando <strong>alt=""</strong>. Não coloque algo como <strong>alt="Esta imagem é apenas decorativa"</strong>, isso será irritante para o usuário que utiliza leitores de tela.</p>
 
 	<p>Não use imagens para criar espaços ou outros efeitos similares, isso pode ser feito apenas usando CSS.</p>
 
-	<h3>Flash e Substituição de Imagem</h3>
+	<h2>Flash e Substituição de Imagem</h2>
 
-	<p>Sempre use um conteúdo HTML de backup para o flash. Todas as promo imagens devem usar CSS baseado em substituição de imagem em vez de tags <code>alt</code>.</p>
+	<p>Sempre use um conteúdo HTML de backup para o flash. Todas as promo imagens devem usar CSS baseado em substituição de imagem em vez de tags <strong>alt</strong>.</p>
 
 	<figure class="preCode">Fallback para versões sem flash:</figure>
 	<textarea class="brush:html">
@@ -93,16 +93,16 @@
 
 	<p>Ter um fallback para flash e imagens também irá ajudar o SEO.</p>
 
-	<h3>Tabelas</h3>
+	<h2>Tabelas</h2>
 
 	<p>Tabelas devem ser usadas apenas para dados tabulares. Ela não deve ser usada com propósitos de apresetnação ou de layout. Quando usar tabelas:</p>
 
 	<ul>
-		<li>Use o elemento <code>th</code> para o cabeçalho da tabela. Se o cabeçalho tiver abreviações, use o atributo <code>abbr</code> para expandi-las.</li>
-		<li>Para tabelas complexas, use o atributo <code>scope</code> nos cabeçalhos da tabela para indicar a quem elas dizem a respeito.</li>
+		<li>Use o elemento <strong>th</strong> para o cabeçalho da tabela. Se o cabeçalho tiver abreviações, use o atributo <strong>abbr</strong> para expandi-las.</li>
+		<li>Para tabelas complexas, use o atributo <strong>scope</strong> nos cabeçalhos da tabela para indicar a quem elas dizem a respeito.</li>
 	</ul>
 
-	<h3>Cores</h3>
+	<h2>Cores</h2>
 
 	<p>Uso de cores deve cumprir o seguinte:</p>
 
@@ -113,11 +113,11 @@
 
 	<p>O site <a href="http://www.w3.org/WAI/ER/existingtools.html" target="_blank">WAI contêm uma lista de ferramentas focadas para usuários com daltonismo</a>, algumas que lhe permitem ver o site como as pessoas com diferentes tipos de daltonismo vêem.</p>
 
-	<h3>JavaScript</h3>
+	<h2>JavaScript</h2>
 
 	<p>Páginas devem continuar a ser funcionais mesmo desabilitando o JavaScript. Aplicações devem degradar normalmente, ou quando possível fazer uso dos <a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills">polyfills</a>, para adicionar aos navegadores mais antigos as funcionalidades que eles não suportam.</p>
 
-	<h3>Acessibilidade Checklist</h3>
+	<h2>Acessibilidade Checklist</h2>
 
 	<p>Aqui o checklist da <a href="http://www.w3.org/TR/WCAG10/full-checklist.html">W3C</a> sobre os pontos de verificação para acessibilidade. Intefaces desenvolvidas pela Isobar devem conhecer as diretrizes - Prioridade 1 - <a href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#Guidelines">Diretrizes WCAG 1.0</a>.</p>
 
