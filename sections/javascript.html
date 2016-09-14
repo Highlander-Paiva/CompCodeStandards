@@ -1,0 +1,253 @@
+<!-- #### JAVSCRIPT SECTION #### -->
+
+<section id="js">
+
+	<div class="intro has-icon">
+		<img class="icon" src="img/layout/code.png" alt="</>" />
+
+		<h1>JavaScript</h1>
+
+		<p>JavaScript é o terceiro componente principal de uma página web. Código JavaScript quando devidamente aplicado, melhora consideravelmente a experiência do usuário, através do controle de eventos e da camada de comportamento geral.</p>
+
+		<p>JavaScript tem visto uma explosão em sua popularidade nos últimos anos. Ganhou poderosas implementações no navegador que agora possibilitam a criação de aplicações web completas. O uso cuidadoso de JavaScript permite a manipulação e controle total sobre outros dois componentes de criação de páginas web, o <a href="#markup">HTML</a> e <a href="#css">CSS</a>. Hoje, a estrutura das páginas e o visual podem ser manipulados em tempo real, sem que seja necessário atualizar a página completamente.</p>
+
+	</div>
+
+	<h2>Bibliotecas JavaScript</h2>
+
+	<p class="normalize">Nós essencialmente desenvolvemos as novas aplicações usando <a href="http://api.jquery.com/">jQuery</a>, embora tenhamos conhecimento em puro JavaScript, assim como todas as grandes bibliotecas modernas em JavaScript.</p>
+
+	<h2>Princípios Gerais de Código</h2>
+
+	<ul>
+		<li>99% do código deve ficar em arquivos externos. Eles devem ser incluídos no FIM da tag <code>body</code> para melhor performance.</li>
+		<li>Não confie na string <code>user-agent</code>. Faça a detecção usando o recurso adequado. (Mais em <a href="http://diveintohtml5.info/detect.html">Dive Into HTML5: Detecção</a> &amp; <a href="http://api.jquery.com/jQuery.support/">jQuery.support docs</a>)</li>
+		<li>Não utilize <code>document.write()</code>.</li>
+		<li>Todas as variáveis boleanas devem começar com "is".
+			<figure class="preCode">Teste para condições positivas</figure>
+			<textarea class="brush:js">
+			isValid = (test.value >= 4 && test.success);
+			</textarea>
+		</li>
+		<li>Nomeie variáveis e funções de forma lógica. Por exemplo: <code>popUpWindowForAd</code>, ao invés <code>myWindow</code>.</li>
+        <li>Não faça reduções ao nomear variáveis. Com exceção dos tradicionais <code>i</code> etc. Para loops <code>for</code>, variáveis devem ter nomes longos o suficiente para ter significado. </li>
+		<li>A documentação deve seguir a estrutura do <a href="http://www.naturaldocs.org/documenting.html">NaturalDocs</a>.</li>
+		<li>Constantes ou variáveis de configuração (como duração de animações etc.) devem ficam no começo do arquivo.</li>
+
+		<li>Esforce-se para criar funções que possam ser generalizadas, ter parâmetros e valores de retorno. Isto permite a reutilização substancial do código e, quando combinada com includes ou scripts externos, podem reduzir a sobrecarga quando os scripts tem necessidade de mudar. Por exemplo, em vez da difícil codificação de uma janela pop-up com tamanho de janela, opções, urls, considere apenas criar uma função que tenha tamanho, url e opções como variáveis.</li>
+
+		<li>Comente o seu código! Isso ajuda a reduzir o tempo gasto com soluções de problemas em funções JavaScript.</li>
+		<li>Não perca seu tempo com <code>&lt;!-- --&gt;</code>, comentários que cercam sua linha javascript, a menos que você se preocupe com o Netscape 4.&nbsp;:)</li>
+		<li>Organize seu código com o <a href="https://nandovieira.com.br/design-patterns-no-javascript-singleton">Object Literal/Singleton</a>, com o <a href="http://www.yuiblog.com/blog/2007/06/12/module-pattern/">Module Pattern</a>, ou com o <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript">Object with constructors</a>.</li>
+
+	  <li>Reduza variáveis globais - quanto menos você as criar, melhor. Geralmente uma para o espaço de sua aplicação é um bom número.
+			<figure class="preCode">Ao especificar qualquer variável global, identifique-a de forma clara.</figure>
+			<textarea class="brush:js">
+			window.globalVar = { ... }
+			</textarea>
+		</li>
+	</ul>
+
+	<h3>Espaços em branco</h3>
+
+	<p>Em geral, o uso de espaços em branco devem seguir convenções de leitura inglesa de longa data. Tal que, haverá um espaço após cada vírgula e depois dois-pontos (e ponto e vírgula, se for o caso), mas sem espaços dentre os lados direito e o esquerdo do parênteses. Resumindo, nós defendemos a leitura dentro da razão. Adicionalmente, chaves devem sempre aparecer na mesma linha como seu argumento precedente.</p>
+
+	<p>Considere os seguintes exemplos for-loop de JavaScript...</p>
+
+	<figure class="preCode">Correto</figure>
+	<textarea class="brush:js">
+		for (var i = 0, j = arr.length; i < j; i++) {
+			// Faz algo.
+		}
+	</textarea>
+
+	<figure class="preCode">Errado</figure>
+	<textarea class="brush:js">
+		for ( var i = 0, j = arr.length; i < j; i++ )
+		{
+			// Faz algo.
+		}
+	</textarea>
+
+	<figure class="preCode">Errado também</figure>
+	<textarea class="brush:js">
+		for(var i=0,j=arr.length;i<j;i++){
+			// Faz algo.
+		}
+	</textarea>
+
+	<h3>plugins.js e script.js</h3>
+
+	<p>Começando com o H5BP que é nos apresentado com dois arquivos, plugins.js e script.js. Essa seção descreve o uso básico destes dois arquivos:</p>
+
+	<h4>plugins.js</h4>
+
+	<p>O plugin.js serve para conter todos os códigos de plugins utilizados no seu site. Em vez de linkar para diferentes arquivos, nós podemos melhorar o desempenho incluindo todo o código em apenas um arquivo. Embora exista exceções para este uso, um plug-in extremamente grande que é somente usado em uma única página raramente visitada, deve ficar em um arquivo separado e só linkado na página que é usado. Embora, na maioria das vezes é seguro colocar versões comprimidas de todos os seus plugins num arquivo só para fácil acesso.</p>
+
+	<p>Aqui um exemplo de como um arquivo deve se parecer, incluindo uma pequena tabela de conteúdo. Isso pode servir como um guia prático para os plugins que estão em uso, incluindo URLs para documentação, razão para o uso e assim por diante:</p>
+
+	<textarea class="brush:js">
+	/* PLUGIN DIRECTORY
+	What you can find in this file [listed in order they appear]
+
+		   1.) Animate Background Position - http://plugins.jquery.com/project/backgroundPosition-Effect
+		   2.) jQuery Easing Plugin - http://gsgd.co.uk/sandbox/jquery/easing/
+		   3.) jQuery Ajax Form plugin - http://jquery.malsup.com/form/#download
+		   4.) jQuery validation plugin (form validation) - http://docs.jquery.com/Plugins/Validation
+			   -password strength
+		   5.) Styled Selects (lightweight) - http://code.google.com/p/lnet/wiki/jQueryStyledSelectOverview
+	*/
+
+	/**
+	* 1.) Animate Background Position - http://plugins.jquery.com/project/backgroundPosition-Effect
+	* @author Alexander Farkas
+	* v. 1.21
+	*/
+	(function($) {
+	   if(!document.defaultView || !document.defaultView.getComputedStyle){ // IE6-IE8
+	   //SNIPPED
+	   };
+	})(jQuery);
+
+
+	/**
+	* 2.) jQuery Easing Plugin (we're not using jQuery UI as of yet) - http://gsgd.co.uk/sandbox/jquery/easing/
+	*/
+
+	// t: current time, b: begInnIng value, c: change In value, d: duration
+	jQuery.easing['jswing'] = jQuery.easing['swing'];
+
+	jQuery.extend( jQuery.easing,
+	{
+	   //SNIPPED
+
+	});
+	;(function($) {
+	   $.fn.ajaxSubmit = function(options) {
+	   //SNIPPED
+	   }
+	})(jQuery);
+
+	/*
+	* jQuery Styled Select Boxes
+	* version: 1.1 (2009/03/24)
+	* @requires jQuery v1.2.6 or later
+	*
+	* Examples and documentation at: http://code.google.com/p/lnet/wiki/jQueryStyledSelectOverview
+	*
+	* Copyright (c) 2008 Lasar Liepins, liepins.org, liepins@gmail.com
+	*
+	* Permission is hereby granted, free of charge, to any person obtaining a copy
+	* of this software and associated documentation files (the "Software"), to deal
+	* in the Software without restriction, including without limitation the rights
+	* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	* copies of the Software, and to permit persons to whom the Software is
+	* furnished to do so, subject to the following conditions:
+	*
+	* The above copyright notice and this permission notice shall be included in
+	* all copies or substantial portions of the Software.
+	*
+	* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+	* THE SOFTWARE.
+	*
+	*/
+
+	jQuery.fn.styledSelect = function(settings) {
+	//SNIPPED
+		   return this;
+	};
+	</textarea>
+
+	<h4>Script.js</h4>
+
+	<p>Script.js serve para conter o código da sua aplicação ou site. Novamente, esta não é sempre a melhor solução em uma grande equipe. Projetos grandes e ricos em recursos podem acabar dividindo o código do aplicativo em módulos ou recursos em arquivos específicos. Para sites pequenos, aplicações simples ou protótipo inicial, deixe seu trabalho no scripts.js para fazer mais sentido.</p>
+
+	<p>Um exemplo simplificado, usando o padrão da <a href='http://paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/'>marcação discreta abrangente baseada em DOM, pronta pra execução</a>, poderia ser algo como segue abaixo:</p>
+
+	<textarea class="brush:js">
+	/* Name: Demo
+	Author: Demo King */
+	/*demo namespace*/
+	demo = {
+	 common : {
+	   init     : function(){
+		   //initialize
+	   },
+	   finalize : function(){
+		   //finalize
+	   },
+	   config : {
+		   prop : "my value",
+		   constant : "42"
+	   }
+	 },
+	 mapping : {
+	   init     : function(){
+		   //create a map
+	   },
+	   geolocate    : function(){
+		   //geolocation is cool
+	   },
+	   geocode : function(){
+		   //look up an address or landmark
+	   },
+	   drawPolylines : function(){
+		   //draw some lines on a map
+	   },
+	   placeMarker : function(){
+		   //place markers on the map
+	   }
+	 }
+	}
+	</textarea>
+
+	<h2>Variáveis, ID &amp; Classes</h2>
+
+	<p>Todas as variáveis JavaScript devem ser escritas apenas com minúsculas ou camelCase. A única exceção para este caso é se estiver criando Constructor Functions, quais começam com maiúsculas por tradição. Todo <code>id</code> e declarações <code>class</code> em CSS, devem ser escritas usando apenas minúsculas. Não use traços, nem sublinhados.</p>
+
+	<h3>Delegação de Eventos</h3>
+
+	<p>Ao atribuir ouvintes de eventos discretos, normalmente é aceitável atribuir diretamente para os elementos que irão disparar alguma ação resultante. No entanto, ocasionalmente pode existir vários elementos que correspondam aos critérios para o qual você está verificando, e anexando ouvintes de eventos para cada um deles, isso pode afetar negativamente o desempenho, nestes casos, ao invés disso você deve usar a delegação de evento:</p>
+
+	<p>jQuery's <a href="http://api.jquery.com/delegate">delegate()</a> é preferível ao <a href="http://api.jquery.com/live">live()</a>, por questões de performance.</p>
+
+	<h3>Debugando</h3>
+
+	<p>Mesmo com os melhores validadores, inevitavelmente certas peculiaridades do navegador irão lhe causar problemas. Abaixo algumas ferramentas úteis que irão lhe auxiliar a refinar a integridade do seu código ou ajudar na velocidade de carregamento. É importante que você tenha todas essas ferramentas disponíveis com você, apesar do navegador primário que você usa para desenvolvimento. Nós recomendamos primeiramente codificar para o Firefox e Safari, então Google Chrome e Opera e adicionando tweaks com comentários condicionais apenas para o Internet Explorer. A lista a seguir possuí vários depuradores úteis e analisadores de velocidade:</p>
+
+	<ul>
+		<li><strong>Firefox</strong>: <a href="http://getfirebug.com/">Firebug</a>, <a href="http://code.google.com/speed/page-speed/">Page Speed</a>, <a href="http://developer.yahoo.com/yslow/">YSlow</a></li>
+		<li><strong>Safari</strong>: <a href="http://developer.apple.com/safari/library/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/UsingtheWebInspector/UsingtheWebInspector.html">Web Inspector</a></li>
+		<li><strong>Google Chrome</strong>: <a href="https://developers.google.com/web/tools/chrome-devtools/">Developer Tools</a></li>
+		<li><strong>Opera</strong>: <a href="http://opera.com/dragonfly/">Dragonfly</a></li>
+		<li><strong>Internet Explorer 6-7</strong>: <a href="http://microsoft.com/downloads/details.aspx?familyid=E59C3964-672D-4511-BB3E-2D5E1DB91038">Developer Toolbar</a></li>
+		<li><strong>Internet Explorer 8-10</strong>: <a href="http://msdn.microsoft.com/en-us/library/dd565625(v=VS.85).aspx">Developer Tools</a></li>
+	</ul>
+
+	<h3>Padrões para um melhor JavaScript</h3>
+
+	<ul>
+		<li>Escreva um código de fácil manutenção</li>
+		<li>Padrão único para var</li>
+		<li>Elevação: Um problema com vars dispersas</li>
+		<li>(Not) Augmenting Built-in Prototypes</li>
+		<li>Evite Conversão de Tipo Implícita</li>
+		<li>Evite eval()</li>
+		<li>Converta número com parseInt()</li>
+		<li>Localização de chave de abertura</li>
+		<li>Capitalize Constructors</li>
+		<li>Escreva comentários</li>
+		<li>Evite void</li>
+		<li>Evite with Statement</li>
+		<li>Evite continue Statement</li>
+		<li>Evite Bitwise Operators, se possível</li>
+	</ul>
+
+	<p>Stoyan Stefanov fala mais sobre estes e <a href="http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/">outros detalhes aqui</a>.</p>
+
+</section>

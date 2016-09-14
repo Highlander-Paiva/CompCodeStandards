@@ -1,0 +1,226 @@
+<!-- ### CROSS-BROWSER + PERFORMANCE SECTION ### -->
+
+<section id="performance">
+
+	<div class="intro has-icon">
+		<img class="icon" src="img/layout/icon-curly.png" alt="{}" />
+
+		<h1>Performance</h1>
+
+		<p>Enquanto nós continuamos a ultrapassar os limites do que é possível fazer na web, continua sendo importante que uma página tenha que ser usada com o mínimo de esforço ou tempo de espera possível. A seguir algumas explicações sobre como páginas web podem ser otimizadas para continuar a deixar todos os públicos felizes.</p>
+	</div>
+
+	<h3>Otimizar a entrega do CSS e do JavaScript</h3>
+
+	<p>Segue algumas otimizações que devem ser feitas para servir CSS e JavaScript em produção:</p>
+
+	<ul>
+		<li>Seguir as diretrizes de performances do <a href="http://developer.yahoo.com/performance/">Yahoo</a>
+		<li>Reduza imagens usando o <a href="http://www.imgopt.com/">smush.it</a>. Também use o <a href="http://developer.yahoo.com/yslow/">YSlow</a>, que reduz automaticamente todas as imagens para você.</li>
+		<li>Configure apropriadamente o cache dos cabeçalhos.</li>
+		<li>Considere um subdomínio sem cookies para static assets</li>
+		<li>Evite blocos em linha de <code.&lt;script&gt;</code>.</li>
+		<li>CSS deve estar localizado no <code>&lt;head></code> do documento, JavaScript deve estar logo antes da tag <code>&lt;/body></code>.</li>'
+		<li>CSS e JavaScript devem estar minificados no lado do servidor. A maioria das pessoas usam o <a href="http://yui.github.io/yuicompressor/">YUI Compressor</a> para isso.</li>
+		<li>Ambos devem ser servidos <a href="https://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/">usando gzip</a></li>
+		<li>CSS devem ser concatenados juntos. Obviamente só pode ser feito com arquivos que compartilham o mesmo tipo de mídia (e.g. screen ou print). O objetivo principal é reduzir o número de conexões HTTP com dependências durante o carregamento da página.</li>
+		<li>JavaScript deve ser concatenado. Enquanto um gerenciador de script ajax seria o ideal (similar ao YUI 3 Loader), é mais complicado de se implementar. No seu lugar, eu recomendo um download singular da maior parte do script usado no site. (Claro, cache apropriado deve ser usado para reter o arquivo, se possível.)</li>
+		<li>Concatenação e minification normalmente ocorrem durante um processo de build automatizado, ao empacotar o código para implantação no palco ou de produção. Muitos usam ferramentas como <a href="http://ant.apache.org/">Ant</a> ou <a href="http://maven.apache.org/">Maven</a>.</li>
+		<li>Evite blocos <code>&lt;script></code> em linha com o HTML. Eles bloqueiam a renderização e são bastante devastadores com o tempo de carregamento de página.</li>
+	</ul>
+
+	<h3>Otimize a execucão do JavaScript</h3>
+
+	<p>Durante o carregamento da página, é comum alguns scripts esperarem para executar, mas você pode priorizar isso. Esta ordem prioriza com base na resposta do usuário:</p>
+
+	<ol>
+		<li>Scripts que mudam visivelmente a natureza da página precisam ser carregadas primeiro. Isso incluí qualquer ajuste de fonte, layout de caixa, ou IE6 pngfixes.</li>
+		<li>Inicialização do conteúdo da página</li>
+		<li>Cabeçalho da página, navegação superior e inicialização do rodapé</li>
+		<li>Anexar manipuladores de eventos</li>
+		<li>Omniture, Doubleclick, e outros scripts de terceiros</li>
+	</ol>
+
+	<h3>Alavancagem dos CSS Sprites</h3>
+
+	<p>CSS Sprites normalmente tem uma porção de imagens mescladas juntas em um arquivo único de imagem. Cada parte é revelada usando CSS <code>background-position</code>. Alguns normalmente seriam assim:</p>
+
+	<textarea class="brush:css">
+	a.expandbox {
+		display: block;
+		width: 75px;
+		height: 15px;
+		text-indent: -999px;
+		overflow: hidden;
+		background: url(../img/sprite.png) no-repeat -50px -5px;
+	}
+	</textarea>
+
+	<P>É muito comum o uso de sprites para estados de <code>:hover</code>. No caso, será algo assim:</p>
+
+	<textarea class="brush:css">
+	a.expandbox:hover { background-position: -50px -20px; }
+	</textarea>
+
+	<p>Usando CSS sprites você reduz o peso total da página e também o número de conexões HTTP, acelerando o carregamento da página. <a href="http://css-tricks.com/css-sprites/">Mais sobre técnicas gerais e uma visão sobre sprites.</a> Isto é apenas uma melhor prática para se fazer, mas sempre que puder, faça o uso de CSS Sprites.</p>
+
+	<p>Muitos desenvolvedores usam um sprite verticalmente-orientado para o sprite primário. Este sprite vertical deve ter <strong>menos do que ou igual a 100px de largura</strong> (e alto), conter ícones que normalmente são colocadas junto ao texto, tais como balas de ítem de lista ou ligue para links e botões de ação.</p>
+
+	<p>A única consideração é que não fazer sprites muitos largos, algo entre 1000px em qualquer direção vai acabar usando uma quantidade considerável de memória. Leia mais em <a href="http://tableless.com.br/css-sprites/">CSS Sprites - Tableless</a>, e para mais dicas gerais e técnicas na criação de sprites, veja o <a href="http://blog.mozilla.com/webdev/2009/03/27/css-spriting-tips/">Mozilla Dev Blog</a>.</p>
+
+	<h3>Formato de imagens</h3>
+
+	<p>Aqui os quatros principais formatos de imagens que devem ser usados, detalhes abaixo:</p>
+
+	<dl>
+		<dt>JPEG</dt>
+		<dd>Ele será responsável por todas as imagens fotográficas, tal como imagens promocionais da homepage e categoria, ou qualquer imagem com um número muito alto de cores.</dd>
+
+		<dt>PNG24</dt>
+		<dd>
+			<p>Este formato é facilmente acessível em Photoshop, gera imagens de alta contagem de cores e apoia suporte a opacidade graduada por pixel. Relativamente, é um formato pesado, medindo em kilobytes. Este é apenas o único formato que o IE6 precisa executar um pngfix para funcionar. Quando projetos precisam dar suporte ao IE6, nós usamos o script <a href="http://www.dillerdesign.com/experiment/DD_belatedPNG/">DD_belatedPNG</a> (Um pngfix que corrige o problema quando PNG24's aparece com um cinza ou um azul claro fundo no IE6. Eles nem sempre são compatíveis com background-position).</p>
+
+			<p>Em muitos casos você pode usar um fallback em GIF para o IE6 no lugar do PNG24. Isso será mais evidente se quaisquer sprites precisam ser feitas em PNG24. Todos os pngfixes são muitos lentos e caros, por isso é melhor evitá-lo.</p>
+		</dd>
+
+		<dt>PNG8</dt>
+		<dd>
+			<p>A surpreendente diversidade de cores pode ser capturada dentro das 256 cores, por isso vale a pena tentar PNG antes de JPG. PNG também é muito mais compacto que o GIF. Este formato permite opacidade graduada em quase todos os navegadores, mas no IE6 os pixels semi-opacos são apenas mostrado com transparência 100%. Em muitos casos isso é suficiente. Ele também não exige um pngfix para ser executado, por isso é útil para melhor performance.</p>
+
+			<p>Photoshop não pode produzir esses arquivos semi-opacas corretamente, mas o Fireworks pode.<a href="http://www.sitepoint.com/blogs/2007/09/18/png8-the-clear-winner/">Leia mais</a>.</p>
+		</dd>
+
+		<dt>Transparent GIF 89a</dt>
+		<dd>
+			<p>GIF 89a oferece a flexibilidade da transparência e amplo suporte dos navegadores, mas com as restrições de nenhuma opacidade graduada, nem uma profundidade acima de 256 cores. Em nossa experiência, profundidade de 64 cores fornecem boa qualidade em miniaturas, e mantem o tamanho do arquivo comparativamente muito pequeno.</p>
+
+			<p>Todas baixa contagens de cores em imagens como ícones ou gráficos temáticos devem ser feitos em PNG8, como é mais eficiente em termos de tamanho deste quatro. PNG8 é a nossa principal recomendação para a maioria dos gráficos em sites.</p>
+		</dd>
+	</dt>
+
+	<p>Detalhes sobre o formato PNG, suporte dos navegadores, e os prós e contras <a href="http://calendar.perfplanet.com/2010/png-that-works/">são abordados neste artigo</a>.</p>
+
+	<p>Para mais otimização destes formatos, use o <a href="www.imgopt.com/">Smush.It</a>, ele irá revelar como eles podem ser menores.</p>
+
+	<h3>Cache</h3>
+
+	<p>Para conteúdo estático, o navegador deve se possível cachear o arquivo localmente. O conteúdo que deve ter o cache com a data em um futuro distante inclui:<p>
+
+	<ul>
+		<li>arquivos CSS e JavaScript</li>
+		<li>imagens de produtos</li>
+		<li>gráficos temáticos</li>
+		<li>favicon.ico</li>
+		<li>flash .swf's e vídeos</li>
+		<li>imagens promocionais (leve cache)</li>
+	</ul>
+
+	<p>Para um melhor cache, alavanque o <code>Expires http header</code>. Aqui um exemplo de futuro distante de Expires header, dizendo ao navegador que esta resposta não será considerada obsoleta até 15 de abril de 2015.</p>
+
+	<pre>Expires: Thu, 15 Apr 2015 20:00:00 GMT</pre>
+
+	<p>Se o seu servidor é Apache, use a diretiva <code>ExpiresDefault</code> para configurar uma data de expiração relativa a data atual. Este é um exemplo usando o <code>ExpiresDefault</code>, configurando o Expires date para 1 ano depois da data de requisição.</p>
+
+	<pre>ExpiresDefault "access plus 1 year"</pre>
+
+	<p><code>Expires http header</code> deve ser configurado para um valor entre um mês a partir do presente a um ano (futuro distante) do presente. Cacheamento aplicado em apenas uma exata URL, para uma mudança no nome do arquivo de qualquer ativo vai começar uma nova cópia. Muitos desenvolvedores usam um processo de construção para adicionar um número de versão ou carimbo de tempo, um exemplo disso é o HTML5 Boilerplate. Cada compilação subsequente vai começar uma nova versão em cache, permitindo que você use datas de cache de futuro distante sem se preocupar. <a href="http://code.google.com/speed/page-speed/docs/caching.html#LeverageBrowserCaching ">Google tem bastante detalhes sobre cache do navegador</a>.</p>
+
+	<h3>Recursos compartilhados em vários domínios</h3>
+
+	<p>Conteúdo estático deve certamente ser servido de um domínio diferente daquele que serve o HTML. Isto é o ideal e não há que ter <a href="http://developer.yahoo.com/performance/rules.html#cookie_free">extra cookies headers em toda requisição de conteúdo estático.</a> É também muito fácil de se escrever regras de cache para todo o domínio. (Também qualquer subdomínio do domínio atual irão herdar os cookies, por isso vale a pena usar um domínio completamente novo).</p>
+
+	<p>Embora com suficientes acertos (especialmente em imagens) o número de requisições cresce o suficiente para deixar lento o carregamento da página. Muitos navegadores têm uma restrição baixa de quantas coisas que irão baixar simultaneamente por domínio. (No IE6 e 7, é apenas dois). Em todo o caso, podemos servir múltiplos domínios dessa forma: </p>
+
+	<ul>
+		<li>static1.otherdomain.com</li>
+		<li>static2.otherdomain.com</li>
+		<li>static3.otherdomain.com</li>
+	</ul>
+
+	<p><a href="http://code.google.com/speed/page-speed/docs/rtt.html#ParallelizeDownloads">Mais informações sobre sharding de domínio no Google Speed</a></p>
+
+	<h3>Evite IFRAMEs</h3><!-- como a peste -->
+
+	<p>Iframes são o elemento mais caro para adicionar a uma determinada página. Eles bloqueiam a página de disparar o evento <code>onload</code> até que eles estão completos. Às vezes, são úteis para permitir que outra agência possa lidar com scripts de rastreamento. Por exemplo, a tag do Doubleclick é um iframe, e o administrador pode adicionar rastreamento de pixels em seu painel. Em qualquer caso em que um iframe é adicionado, deve ser anexado ao DOM dinamicamente após a janela de <code>onload</code> foi disparada. <a href="http://developer.yahoo.com/performance/rules.html#iframes">Mais detalhes no site sobre Performance do Yahoo.</a></p>
+
+	<h3>Interação com serviços de terceiros</h3>
+
+	<h4>Omniture</h4>
+
+	<p>Nós recomendamos que adicione o código do Omniture JavaScript para o DOM usando JavaScript após a página ter sido carregada (seja um evento DOM ready ou window's load event). Usando esta técnica, não terá dependências de scripts partindo de domínios externos, que pode deixar o site lento (e bem lento).</p>
+
+	<h4>Flash</h4>
+
+	<p>Conteúdo de backup deve estar no mesmo lugar do Flash em todos os casos para maximizar o trabalho do SEO. Para XML-driven, o backup do conteúdo deve ser alavancando com o mesmo arquivo XML, para garantir a consistência dos dados.</p>
+
+	<p>Todas as substituições devem ser feitas usando SWFObject, mas sem tags em linha <code>script</code>. Inicialização <code>SWFObject</code> deve executar após o evento DOM Ready. Versões do player devem estar ajustadas para no mínimo v9, para garantir compatibilidade com AS3.</p>
+
+	<h2 id="browserperformance">Estratégia de Performance Cross-Browser</h2>
+
+	<p>Há duas importantes verdades quando se trata de experiência de navegador:</p>
+
+	<ol>
+		<li>Sempre procure a experiência mais responsiva possível.</li>
+		<li>Tudo adicionado a página desacelera.</li>
+	</ol>
+
+	<p>Assim com estes dois fatos da vida, quais os passos que precisamos para deixar todos felizes?</p>
+
+	<h3>Crie métricas de sucesso com o cliente</h3>
+
+	<p>Estas devem ser customizadas para o seu cliente e projeto, devem também ser terminadas antes da fase de wireframing. Estes objetivos devem ser razoáveis a partir de um POV técnico, bem como testáveis.</p>
+
+	<strong>Alguns objetivos que seriam apropriados:</strong>
+
+	<ol>
+		<li>O navegador mais lento suportado deve carregar totalmente a página com o cache vazio em 5 segundos.</li>
+		<li>Estados <code>hover</code> (e outras mudanças 'instantâneas') devem responder com 100ms.</li>
+		<li>Animações devem surgir suavemente, com jumpiness ocorrendo &lt; 15% do tempo (em todos os navegadores).</li>
+	</ol>
+
+	<p>Para metas de carregamento de página, é importante definir o benchmark do sistema. Uma boa opção é o <a href="http://www.webpagetest.org/">PageTest</a>. Adicionalmente, metas podem ser definidas para múltiplas páginas, por exemplo: as duas maiores páginas de destino (ex: homepage e suporte).
+
+	<p>Se o cliente tiver metas mais agressivas que são razoáveis ​​com o que é pretendido, as expectativas devem ser definidas através de reuniões do conselho, avisar a equipe das metas de desempenho do projeto é fundamental.</p>
+
+	<h3>Comunicando o impacto de performance durante o processo de design</h3>
+
+	<strong>Internalmente</strong>
+
+	<p>Durante IA, IxD, e o a criação do design, é o papel do front-end comunicar o impacto de performance das características interativas ou certas técnicas visuais dos navegadores alvos. Dê aos designers as restrições: "Se nós usarmos Cufon, não podemos ter mais de 10 elementos de fontes customizadas por página.</p>
+
+	<strong>Externamente</strong>
+
+	<p>Expectativas precisam ser definidas, <strong>todos os navegadores não terão a mesma experiência</strong>. Eles não vão executar bem como uns aos outros, não farão sentido eles terem semelhanças. Seria sensato deixar de suportar algumas características para a experiência com IE7. Catacterísticas que podem ser descartadas: <em>shadows, transitions, rounded corners, opacity, gradients.</em></p>
+
+	<strong>Quando comunicamos o impacto de algo:</strong>
+
+	<ul>
+		<li>Deixe claro o impacto com os maiores detalhes possível: "isso irá ferir o carregamento da página" vs "isso somará mais 2 segundos de carregamentos do site no IE"</li>
+		<li>Fornecer um POC rápido (prova de conceito), se possível: "É uma página semelhante sem siFR carrega em 2 segundos, com siFR ela carrega em 8 com um atraso para visualizar quando há rolagem"</li>
+	</ul>
+
+	<h3>Desenvolver de acordo com as melhores práticas</h3>
+
+	<p>Escolha bibliotecas e plugins que tem otimização na performance. Tome decisões sábias na arquitetura baseado nas metas de performance. Também minimize manipulação do DOM quando possível, e escreva estilos para <a href="http://paulirish.com/2009/avoiding-the-fouc-v3/">evitar mudanças visuais</a> quando a página carrega e inicializa.</p>
+
+	<h3>Medir a performance durante o QA</h3>
+
+	<p>Equipes <abbr title="Quality Assurance">QA</abbr> (em português, Garantia da qualidade) devem também priorizar desempenho, relacionados ao lado do visual e questões de usabilidade. Desenvolvedoress e QA devem determinar como esta prioridade será atribuída. Durante o QA, as métricas de sucesso devem ser testadas regularmente.</p>
+
+	<strong>Ferramentas para teste</strong>
+
+	<ul>
+		<li><a href="http://developer.yahoo.com/yslow/">YSlow</a>, <a href="http://code.google.com/speed/page-speed/">Page Speed</a>, <a href="http://stevesouders.com/hammerhead/">Hammerhead</a>, <a href="http://www.webpagetest.org/">PageTest</a></li>
+	</ul>
+
+	<strong>Quando as metas de performance não são cumpridas, há três opções:</strong>
+
+	<ol>
+		<li><em>Reconstrua o código</em> - o perfil, descubra os gargalos, refatore o código, otimize para atingir uma execução mais rápida no navegador</li>
+		<li><em>Largue o recurso</em> - desligá-lo apenas para os navegadores mais lentos</li>
+		<li><em>Redesenho da abordagem do UI</em> - talvez o projeto poderia usar um ajuste que seria ignorar totalmente o problema</li>
+	</ol>
+
+	<p>Com esta abordagem, nós achamos que todas as partes devem ter uma melhor chance de ter as expectativas alinhadas, bem como um fluxo de trabalho mais sensível ao lidar com os desafios de desempenho.</p>
+
+</section>

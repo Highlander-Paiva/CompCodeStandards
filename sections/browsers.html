@@ -1,0 +1,116 @@
+<!-- #### BROWSERS SECTION #### -->
+
+<section id="browserTesting">
+
+	<div class="intro has-icon">
+		<img class="icon" src="img/layout/code.png" alt="</>" />
+
+		<h1>Teste com Navegadores e Suporte</h1>
+
+		<p>A audiência de hoje pode escolher entre uma grande variedade de navegadores web, cada um fornecendo uma ligeira (ou dramática) diferença na experiência do usuário. Como desenvolvedores, a nossa responsabilidade é escolher apenas como as páginas serão construídas e exibidas para aqueles usuários. Este capítulo descreve como nós da Isobar tomamos algumas dessas decisões-chave.</p>
+
+	</div>
+
+	<h3>O que damos suporte</h3>
+
+	<figure>
+		<img src="img/browsers1.jpg" alt="Browsers" />
+	</figure>
+
+	<p>A <strong>CompJúnior dá suporte a qualquer navegador com Grade-A no <a href="http://developer.yahoo.com/yui/articles/gbs/">Yahoo's Graded Browser Support</a>. </strong>.</p>
+
+	<p>Faremos o possível para dar suporte a qualquer outros navegadores de missão crítica solicitados pelo cliente (IE 5.5, Opera, Konqueror, Safari 3 no PC etc), embora não possamos garantir todas as funcionalidades.</p>
+
+	<h3>Como nós testamos</h3>
+
+	<p>Testes abrangentes em navegadores é uma necessidade em todos os projetos web da CompJúnior. Um esforço considerável deve ser feito para testar em vários navegadores e plataformas para garantir a qualidade e experiência consistente do usuário. Configurar um ambiente de teste pode ser um desafio, mas pode valer a pena.</p>
+
+	<h4>No Microsoft Windows</h4>
+
+	<h5 id="vhds">Teste com IE</h5>
+
+	<p>Desde que se tornou impossível ter mais de uma única cópia do Microsoft Internet Explorer instalada no PC, testar para o IE se tornou um desafio. Felizmente, a Microsoft finalmente tornou disponível para download, versões antigas de desenvolvimento do Internet Explorer. Esses Discos Virtuais (VH's) rodam versões antigas do Microsoft Windows que expiram (tempo limite) ao longo do tempo. Configurá-lo novamente depois de alguns meses se torna comum. Cópias de desenvolvimento do Microsoft Windows de sua licença MSDN (se estiver disponível) também pode ser uma opção, dependendo do que você tem acesso.</p>
+
+	<ul>
+		<li><a href="https://www.microsoft.com/pt-br/download/details.aspx?id=3702">Virtual PC</a> - Virtual PC deve ser instalado no seu computador, e se você estiver no Windows 7, você deve usar o "Modo XP".</li>
+		<li><a href="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=21eabb90-958f-4b64-b5f1-73d0a413c8ef&displaylang=en">Microsoft Windows VPC Images</a> - Diversas variedades de imagens de discos virtuais estão disponíveis. Dependendo do seu projeto, você pode necessitar instalar diversos para ter um conjunto abrangente de testes.</li>
+	</ul>
+
+	<p>Existem outras opções menos eficazes de testar o IE (normalmente não recomendado) como o  <a href="http://www.my-debugbar.com/wiki/IETester/HomePage">IETester</a>.
+
+	<h5>Firefox</h5>
+	<ul>
+		<li><a href="http://www.mozilla.com/en-US/firefox/all-older.html">Firefox 3.6+</a> devem ser instalados nativamente - com versões 3.0 disponíveis através de <a href="http://portableapps.com/">versões portatéis</a>.</li>
+		<li>Se você estiver apto, instale o Firefox 3, 3.5, e/ou 3.6 lado-a-lado com FF4. O Firefox Profile Manager permite que você instale diferentes diretórios e <a href="http://lifehacker.com/5481213/master-multiple-firefox-profiles-for-more-productive-browsing">mantenha diferentes perfis para cada</a>.</li>
+	</ul>
+
+	<h5>Safari para PC</h5>
+	<ul>
+		<li>Use <a href="http://www.apple.com/safari/">a mais nova versão do Safari no PC</a>. Ela é 98% consistente com o Safari no OS X, mas não completamente, então teste este se for um alvo de suas plataformas. </li>
+	</ul>
+
+	<h5>Opera</h5>
+	<ul>
+		<li>Você pode baixar <a href="http://arc.opera.com/pub/opera/win/">versões antigas destes arquivos</a>. Instale em diferentes pastas para rodar múltiplas versões.</li>
+	</ul>
+
+	<h5>Google Chrome e suas versões</h5>
+
+	<p>Google Chrome se atualiza automaticamnete e para nossa sorte, a maioria dos usuários tem a versões mais recente deles. Com ele é mais fácil, então, não se preocupe com versões antigas do Google Chrome.</p>
+
+	<h4>No Mac OS X</h4>
+
+	<p>O core dos navegadores Mac OS X, Mozilla Firefox, Google Chrome e Apple Safari oferecem experiências de navegador praticamente idênticas aos do Windows. Algumas diferenças de nível de sistema operacional pode estar presente e sites devem ser testados em ambas as plataformas. Diferenças típicas ocorrem em torno de renderização de fontes e por vezes surgem questões de espaçamento.</p>
+
+	<h5>Teste para Windows em um Mac</h5>
+
+	<p>Existe um número de opções para testes em navegadores no Windows no Mac OS. Primeiro, o Mac oferece uma partição "<a href="http://en.wikipedia.org/wiki/Boot_Camp_(software)">boot camp</a>", que permite que você inicialize uma partição Microsoft Windows. Este é um ambiente de teste complexo, mas completo. Depois de iniciar no Windows, o normal é ter as todas opções que existem nele.</p>
+
+	<p>Outras opções incluem virtualização do Windows dentro do Mac OS X, que permite que você literalmente rode o Windows dentro do Mac OS.</p>
+
+	<p>As Microsoft VHD's podem ser abertas e convertidas na maioria dessas opções, portanto, permitindo o mesmo grau de destreza nos testes que os usuários do Windows têm à sua disposição. Embora desde que você também pode testar no Mac ao mesmo tempo, alguns podem argumentar que você tem mais flexibilidade...</p>
+
+	<ul>
+		<li><a href="http://www.parallels.com/products/desktop/">Parallels</a> - Parallels está disponível e já pode ser instalado pelo departamento de TI Isobar no seu Mac.</li>
+		<li><a href="http://www.vmware.com/products/fusion/overview.html">VMWare Fusion</a> - VMWare Fusion oferece o mesmo nível de virtualização do Windows através do seu produto Fusion.</li>
+	</ul>
+
+	<h5>Mozilla Firefox</h5>
+
+	<p>Assim como no Windows, você pode instalar e rodar várias cópias do Mozilla Firefox no seu Mac, embora seja um pouco mais complicado de configurar vários perfis através do Profile Manager. Aqui algumas dicas que você pode usar com o <a href="http://sonnygill.net/mac/mac-multiple-firefox-profiles/">Automator, para fazer perfis separados e executá-los bem</a>.</p>
+
+	<h3>Bugs nas versões standalone do IE</h3>
+
+	<p>Nota: O IE6 standalone tem um bug de implementação de opacidade em alguns casos. Isto irá resultar em falhas em qualquer opacidade aplicada com um filtro de CSS, como alfa opacidade ou um PNG de 24-bit. No caso de opacidade deve ser testado, você vai precisar de uma instalação nativa IE6.</p>
+
+	<p>Foi noticiado que o IE7 usando a plataforma do Vista não tem diferença das versões do Windows XP, portanto, você pode querer ter certeza de que alguém em sua equipe tem esta configuração também. <a href="http://www.my-debugbar.com/wiki/IETester/HomePage">IETester</a> sabe-se que corrigir uma série destas questões, assim como os navegadores Xenocode.</p>
+
+	<h2>Resolução do Navegador</h2>
+
+	<p>Junto com a restauração de browsers, os desenvolvedores devem ficar consciente das resoluções de tela de seu público. Como as telas dos monitores ficaram maiores, a amplitude das resoluções cresce também. Abaixo estão algumas diretrizes para ajudá-lo a trabalhar com resoluções.</p>
+
+	<p><strong>Resolução 1024px</strong></p>
+
+	<ul>
+		<li>Altura de rolagem visível estimada em 570px.</li>
+		<li>Ideal largura com: 960px - Tem espaçamento confortável nos dois lados, é dividido por muitos números, e também se sai bem com o padrão <a href="http://www.iab.net/iab_products_and_industry_services/1421/1443/1452">IAB</a></li>
+		<li>Maior largura: 970px - Continua com alguns espaçamentos nos dois lados na maioria dos navegadores. A matemática, joga bem com o <a href="http://en.wikipedia.org/wiki/Golden_ratio">Golden Ratio</a></li>
+		<li>Máxima largura: 996px - Sem incluir barras de rolagens horizontais na maioria dos navegadores. <a href="http://www.nealgrosskopf.com/tech/thread.php?pid=43">Baseado nesta pesquisa </a>, o máximo é de 1003px de largura, se você não quer uma barra de rolagem horizontal.</li>
+	</ul>
+
+	<p><strong>Estatísticas atuais sobre tamanhos de janela</strong></p>
+
+	<ul>
+		<li><a href="http://www.cameronmoll.com/archives/001220.html">Authentic Boredom - Largura ideal para resolução de 1024px?</a></li>
+		<li><a href="http://marketshare.hitslink.com/report.aspx?qprid=17&qpmr=100&qpdt=1&qpct=3&qptimeframe=M">Market share para navegadores, sistemas operacionais e motores de busca</a></li><li><a href="http://www.w3counter.com/globalstats.php">Global Web Stats</a></li>
+	</ul>
+
+	<p><strong>Resolução do sistema não é, contudo, o mesmo que o tamanho do navegador</strong></p>
+
+	<ul>
+		<li><a href="http://www.baekdal.com/reports/actual-browser-sizes/abs-sizes/">Qual o tamanho que eu preciso dar suporte? | baekdal</a></li>
+		<li><a href="http://www.456bereastreet.com/archive/200704/poll_results_504_of_respondents_maximise_windows/">Resultado da enquete: 50.4% dos entrevistados maximizam janelas</a></li>
+		<li><a href="http://www.useit.com/alertbox/screen_resolution.html">Resolução da tela e layout de página</a></li>
+	</ul>
+
+</section>
