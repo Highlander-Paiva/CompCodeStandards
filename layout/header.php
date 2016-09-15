@@ -20,4 +20,13 @@
         <!-- Todo JavaScript deve ir na parte de baixo, exceto Modernizr que habilita HTML5 elements e detecta features -->
         <script src="js/modernizr-2.0.6.min.js">
         </script>
+
+        <!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-84236009-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
     </head>

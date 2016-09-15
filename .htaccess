@@ -26,8 +26,7 @@ satisfy all
           ExpiresByType image/png "access plus 60 days"
           ExpiresByType image/gif "access plus 60 days"
           ExpiresByType image/jpeg "access plus 60 days"
-          ExpiresByType image/x-ico "access plus 1 month"
-          ExpiresByType image/ico "access plus 1 month"
+          ExpiresByType image/x-icon "access plus 1 year"
 
           ExpiresByType text/css "access 1 month"
 
@@ -46,7 +45,7 @@ satisfy all
           ExpiresByType application/x-javascript "access plus 1 week"
           ExpiresByType application/javascript "access plus 1 week"
 
-          ExpiresDefault "access 2 days"
+          ExpiresDefault "access 1 month"
 </IfModule>
 
 <IfModule mod_deflate.c>
@@ -75,3 +74,9 @@ BrowserMatch ^HMSI[E] !no-gzip !gzip-only-text/html
 
 SetEnvIfNoCase Request_URI .(?:gif|jpe?g|png)$ no-gzip dont-vary
 </IfModule>
+
+
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)(\.gz)?$">
+Header unset ETag
+FileETag None
+</FilesMatch>

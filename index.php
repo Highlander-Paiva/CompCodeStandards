@@ -72,12 +72,7 @@ include_once('layout/header.php');
 		<script>DD_belatedPNG.fix("img, .png_bg"); // Corrige qualquer <img> ou .png_bg bg-images. Aproveite e leia goo.gl/mZiyb </script>
 		<![endif]-->
 
-  	<script>
-        window._gaq = [['_setAccount','UA-1612394-12'],['_trackPageview'],['_trackPageLoadTime']];
-        Modernizr.load({
-            load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-        });
-    </script>
+  	
 
   <!--[if lt IE 7 ]>
     <script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
