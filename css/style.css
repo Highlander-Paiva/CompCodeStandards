@@ -189,29 +189,6 @@
    overflow: visible;
  }
 
-/* New bulletproof @font-face by fontspring:
-   http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax/ */
-@font-face {
-    font-family: 'Alexandria';
-    src: url('fonts/alexandriaflf-webfont.eot'); /* IE9 Compat Modes */
-    src: url('fonts/alexandriaflf-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('fonts/alexandriaflf-webfont.woff') format('woff'), /* Modern Browsers */
-         url('fonts/alexandriaflf-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('fonts/alexandriaflf-webfont.svg#Alexandria') format('svg'); /* Legacy iOS */
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'AlexandriaBold';
-    src: url('fonts/alexandriaflf-bold-webfont.eot');
-    src: url('fonts/alexandriaflf-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/alexandriaflf-bold-webfont.woff') format('woff'),
-         url('fonts/alexandriaflf-bold-webfont.ttf') format('truetype'),
-         url('fonts/alexandriaflf-bold-webfont.svg#AlexandriaBold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body, select, input, textarea {
   /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
   color: #444;
@@ -247,7 +224,7 @@ body .fork {
   position: fixed;
   top: 0;
   right: -15px;
-  z-index: 4;
+  z-index: 6;
   width: 149px;
   height: 149px;
   background: url(../img/fork-me.png) no-repeat -15px top;
@@ -255,12 +232,12 @@ body .fork {
 
 header {
   position: relative;
-  height: 90px;
+  height: 65px;
   top: 0px;
   width: 100%;
-  z-index: 3;
-  background-color: transparent;
-  border-top: 10px solid #1793a6;
+  z-index: 5;
+  background-color: #353535;
+  border-bottom: 5px solid #1793a6;
 }
 
 header a {
@@ -288,7 +265,7 @@ header h1 {
   position: absolute;
   top: 29px;
   right: 19px;
-  border-bottom: 5px solid #2b2b21;
+  border-bottom: 5px solid #808080;
   -webkit-transition: border 0.5s;
   -moz-transition: border 0.5s;
   transition: border 0.5s;
@@ -303,7 +280,7 @@ header h1 {
   display: block;
   width: 100%;
   height: 5px;
-  background-color: #2b2b2b;
+  background-color: #808080;
   margin-bottom: 3px;
   -webkit-transition: background-color 0.5s;
   -moz-transition: background-color 0.5s;
@@ -1199,7 +1176,7 @@ main {
     background: url("../img/comp.png") no-repeat 0 0;
   }
   h1, h2, h3 {
-    /* color:#f30; */
+    /* color:#1793a6; */
     color: #1793a6;
     position: relative;
     margin-top: 20px;
@@ -1215,7 +1192,7 @@ main {
   }
   a, a:visited {
     text-decoration: none;
-    /* color:#f30 */
+    /* color:#1793a6 */
     color: #1793a6;
   }
   body .fork, #side, .anchor_link, .back-anchor {
@@ -1569,11 +1546,482 @@ pre {
   font-size: 14px;
 }
 
-/*
-   |\      _,,,---,,__
-   /,`.-'`'     -.  ;-;;,_/|
-  |,4-  ) ) -,_..;\ (  `'-'
- '---''(_/--'  `-'\_)
-----------------------------*/
 
-/*# sourceMappingURL=style.css.map */
+.nav-toc {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 100%;
+  z-index: 3;
+  display: block;
+  position: relative;
+  font-size: 13px;
+  padding: 20px 20px;
+  width: 33.33%;
+  max-width: 340px;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  float: right;
+  background-color: #ffffff;
+  -webkit-transition: right 0.5s;
+  -moz-transition: right 0.5s;
+  transition: right 0.5s;
+}
+
+main > section {
+  padding-bottom: 20px;
+}
+
+#toc .h2 {
+  margin: 10px auto;
+}
+
+#toc .h2:nth-child(1) {
+  margin-top: 0px;
+}
+
+#toc .h3 {
+  margin-top: 6px;
+}
+
+body.fix-desktop-toc .nav-toc {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: auto;
+  overflow-y: scroll;
+}
+
+
+
+/**
+ * Print styles.
+ *
+ * Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+ */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+  /* Black prints faster: sanbeiji.com/archives/953 */
+  a, a:visited {
+    color: #444 !important;
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  /* css-discuss.incutio.com/wiki/Printing_Tables */
+  tr, img {
+    page-break-inside: avoid;
+  }
+  @page {
+    margin: 0.5cm;
+  }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2, h3 {
+    page-break-after: avoid;
+  }
+  body {
+    width: 80%;
+    font-family: Calibri, Arial, Helvetica, sans-serif;
+  }
+  header {
+    width: 100%;
+  }
+  .header-logo {
+    background: url("../img/logo-roundarchisobar.png") no-repeat 0 0;
+  }
+  h1, h2, h3 {
+    /* color:#1793a6; */
+    color: #1793a6;
+    position: relative;
+    margin-top: 20px;
+    font-weight: 200;
+  }
+  h1 {
+    padding: 0;
+    margin: 0;
+    color: #00050a;
+  }
+  header h1 a {
+    font-size: 48px;
+  }
+  a, a:visited {
+    text-decoration: none;
+    /* color:#1793a6 */
+    color: #1793a6;
+  }
+  body .fork, #side, header #social, canvas, .anchor_link, .back-anchor {
+    visibility: hidden;
+  }
+  .syntaxhighlighter {
+    background: #ccc;
+  }
+}
+
+/**
+ * Media queries for responsive design.
+ *
+ * These follow after primary styles so they will successfully override.
+ */
+@media all and (max-width: 770px) {
+  body {
+    border-top: 90px solid #fff;
+  }
+  header {
+    border-top: 5px solid #1793a6;
+    position: fixed;
+    padding-left: 0px;
+    z-index: 5;
+  }
+  .menu-button {
+    display: block;
+  }
+  .fork,
+  .social {
+    display: none;
+  }
+  main {
+    padding: 20px;
+    width: auto;
+    margin-left: 0px;
+    float: none;
+    border-right: none;
+  }
+  .nav-toc {
+    width: 250px;
+    right: -250px;
+    left: auto;
+    float: none;
+    position: fixed;
+    z-index: 4;
+    overflow-y: scroll;
+    border-top: 90px solid #fff;
+  }
+  body.menu-open .nav-toc {
+    right: 0px;
+  }
+}
+
+@media all and (max-width: 400px) {
+  body {
+    border-top: 60px solid #fff;
+  }
+  header {
+    height: 60px;
+  }
+  header h1 {
+    margin-top: 12px;
+  }
+  .menu-button {
+    top: 21px;
+  }
+  main {
+    padding: 10px;
+  }
+  .nav-toc {
+    border-top: 60px solid #f5f5f5;
+  }
+}
+
+/* Grade-A Mobile Browsers (Opera Mobile, Mobile Safari, Android Chrome)
+   consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media screen and (min-width: 770px) {
+  p, ol, ul {
+    font-size: 16px;
+  }
+}
+
+/* http://prismjs.com/download.html?themes=prism-twilight&languages=markup+css+clike+javascript&plugins=line-numbers */
+/**
+ * prism.js Twilight theme
+ * Based (more or less) on the Twilight theme originally of Textmate fame.
+ * @author Remy Bach
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: white;
+  direction: ltr;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  text-align: left;
+  text-shadow: 0 -0.1em 0.2em black;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*="language-"],
+:not(pre) > code[class*="language-"] {
+  background: #141414;
+  /* #141414 */
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  border-radius: .5em;
+  border: 0.3em solid #545454;
+  /* #282A2B */
+  box-shadow: 1px 1px 0.5em black inset;
+  margin: .5em 0;
+  overflow: auto;
+  padding: 1em;
+}
+
+pre[class*="language-"]::selection {
+  /* Safari */
+  background: #27292a;
+  /* #282A2B */
+}
+
+pre[class*="language-"]::selection {
+  /* Firefox */
+  background: #27292a;
+  /* #282A2B */
+}
+
+/* Text Selection colour */
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: rgba(237, 237, 237, 0.15);
+  /* #EDEDED */
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: rgba(237, 237, 237, 0.15);
+  /* #EDEDED */
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  border-radius: .3em;
+  border: 0.13em solid #545454;
+  /* #545454 */
+  box-shadow: 1px 1px 0.3em -0.1em black inset;
+  padding: 0.15em 0.2em 0.05em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #787878;
+  /* #777777 */
+}
+
+.token.punctuation {
+  opacity: .7;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.tag,
+.token.boolean,
+.token.number,
+.token.deleted {
+  color: #cf694a;
+  /* #CF6A4C */
+}
+
+.token.keyword,
+.token.property,
+.token.selector,
+.token.constant,
+.token.symbol,
+.token.builtin {
+  color: #f9ee9a;
+  /* #F9EE98 */
+}
+
+.token.attr-name,
+.token.attr-value,
+.token.string,
+.token.char,
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable,
+.token.inserted {
+  color: #919e6b;
+  /* #8F9D6A */
+}
+
+.token.atrule {
+  color: #7386a5;
+  /* #7587A6 */
+}
+
+.token.regex,
+.token.important {
+  color: #e9c163;
+  /* #E9C062 */
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+pre[data-line] {
+  padding: 1em 0 1em 3em;
+  position: relative;
+}
+
+/* Markup */
+.language-markup .token.tag,
+.language-markup .token.attr-name,
+.language-markup .token.punctuation {
+  color: #ad895c;
+  /* #AC885B */
+}
+
+/* Make the tokens sit above the line highlight so the colours don't look faded. */
+.token {
+  position: relative;
+  z-index: 1;
+}
+
+.line-highlight {
+  background: -moz-linear-gradient(left, rgba(84, 84, 84, 0.1) 70%, rgba(84, 84, 84, 0));
+  /* #545454 */
+  background: -o-linear-gradient(left, rgba(84, 84, 84, 0.1) 70%, rgba(84, 84, 84, 0));
+  /* #545454 */
+  background: -webkit-linear-gradient(left, rgba(84, 84, 84, 0.1) 70%, rgba(84, 84, 84, 0));
+  /* #545454 */
+  background: rgba(84, 84, 84, 0.25);
+  /* #545454 */
+  background: linear-gradient(left, rgba(84, 84, 84, 0.1) 70%, rgba(84, 84, 84, 0));
+  /* #545454 */
+  border-bottom: 1px dashed #545454;
+  /* #545454 */
+  border-top: 1px dashed #545454;
+  /* #545454 */
+  left: 0;
+  line-height: inherit;
+  margin-top: 0.75em;
+  /* Same as .prism’s padding-top */
+  padding: inherit 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  white-space: pre;
+  z-index: 0;
+}
+
+.line-highlight:before,
+.line-highlight[data-end]:after {
+  background-color: #8794a6;
+  /* #8794A6 */
+  border-radius: 999px;
+  box-shadow: 0 1px white;
+  color: #f5f2f0;
+  /* #F5F2F0 */
+  content: attr(data-start);
+  font: bold 65%/1.5 sans-serif;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 0.5em;
+  position: absolute;
+  text-align: center;
+  text-shadow: none;
+  top: .4em;
+  vertical-align: .3em;
+}
+
+.line-highlight[data-end]:after {
+  bottom: .4em;
+  content: attr(data-end);
+  top: auto;
+}
+
+pre.line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+  position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -3.8em;
+  width: 3em;
+  /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  border-right: 1px solid #999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.line-numbers-rows > span {
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  color: #999;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}
+
+/* for code blocks if JS isn't running */
+pre {
+  background-color: #000;
+  overflow-x: scroll;
+  font-size: 14px;
+}

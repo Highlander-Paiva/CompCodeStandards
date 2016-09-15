@@ -37,11 +37,10 @@ include_once('layout/header.php');
 
 			</div><!--! Fim da #main section !-->
 
-			<nav id="side" class="nav-right" role="navigation">
-				<h3 class="toc-title">Índice</h3>
-				<ul id="toc" style="display:none"></ul>
-				<noscript><p><a href="http://enable-javascript.com/pt">Por favor habilite o Javascript</a>.</p></noscript>
-			</nav>
+			<nav class="nav-toc" role="navigation">
+        <ul id="toc" style="display: block;"><li class="h2"><a href="#introduction_introduction">Introduction</a></li><li class="h3"><a href="#introduction_goals">Goals</a></li><li class="h3"><a href="#introduction_getting_started">Getting Started</a></li><li class="h3"><a href="#introduction_general_standards">General Standards</a></li><li class="h3"><a href="#introduction_deliverables">Deliverables</a></li><li class="h2"><a href="#html_html">HTML</a></li><li class="h3"><a href="#html_goals_for_markup">Goals for Markup</a></li><li class="h3"><a href="#html_getting_started_on_markup">Getting Started on Markup</a></li><li class="h3"><a href="#html_html_markup_best_practices">HTML Markup Best Practices</a></li><li class="h3"><a href="#html_markup_deliverables">Markup Deliverables</a></li><li class="h3"><a href="#html_next_steps_amp_html5_resources">Next Steps &amp; HTML5 Resources</a></li><li class="h2"><a href="#css_css">CSS</a></li><li class="h3"><a href="#css_goals_for_effective_css">Goals for Effective CSS</a></li><li class="h3"><a href="#css_getting_started_with_css">Getting Started with CSS</a></li><li class="h3"><a href="#css_css_best_practices">CSS Best Practices</a></li><li class="h3"><a href="#css_css_deliverables">CSS Deliverables</a></li><li class="h3"><a href="#css_next_steps_amp_css_resources">Next Steps &amp; CSS Resources</a></li><li class="h2"><a href="#javascript_javascript">JavaScript</a></li><li class="h3"><a href="#javascript_goals">Goals</a></li><li class="h3"><a href="#javascript_getting_started_on_javascript">Getting Started on JavaScript</a></li><li class="h3"><a href="#javascript_javascript_best_practices">JavaScript Best Practices</a></li><li class="h3"><a href="#javascript_javascript_deliverables">JavaScript Deliverables</a></li><li class="h3"><a href="#javascript_next_steps_amp_javascript_resources">Next Steps &amp; JavaScript Resources</a></li><li class="h2"><a href="#responsive_responsive_web_design">Responsive Web Design</a></li><li class="h3"><a href="#responsive_goals_of_responsive_web_design">Goals of Responsive Web Design</a></li><li class="h3"><a href="#responsive_getting_started_with_mobile_development">Getting Started with Mobile Development</a></li><li class="h3"><a href="#responsive_responsive_design_best_practices">Responsive Design Best Practices</a></li><li class="h3"><a href="#responsive_next_steps_amp_rwd_resources">Next Steps &amp; RWD Resources</a></li><li class="h2"><a href="#appendix_appendix">Appendix</a></li><li class="h3"><a href="#appendix_advanced_topics">Advanced Topics</a></li><li class="h3"><a href="#appendix_links_for_more_resources">Links for More Resources</a></li><li class="h3"><a href="#appendix_acknowledgments">Acknowledgments</a></li></ul>
+        <noscript>&lt;p&gt;&lt;a href="http://enable-javascript.com/pt"&gt;Por favor habilite o Javascript&lt;/a&gt;.&lt;/p&gt;</noscript>
+      </nav>
 
 		</div><!--! Fim do #container !-->
 
@@ -57,9 +56,9 @@ include_once('layout/header.php');
 
 		<!-- Ultilize Google CDN's jQuery, usando protocolo de URL relativo; Inclua um local para fall back -->
 		<!-- Recomendação http://www.paulirish.com/2010/the-protocol-relative-url/ -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+		<script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
 		<script>
-			window.jQuery || document.write("<script src='js/jquery-1.6.3.min.js'>\x3C/script>")
+			window.jQuery || document.write("<script src='js/jquery-3.1.0.min.js'>\x3C/script>")
 		</script>
 		<!-- scripts concatenados e minificadosed via ant build script-->
 		<script defer src="js/plugins.js"></script>
@@ -72,7 +71,7 @@ include_once('layout/header.php');
 		<script>DD_belatedPNG.fix("img, .png_bg"); // Corrige qualquer <img> ou .png_bg bg-images. Aproveite e leia goo.gl/mZiyb </script>
 		<![endif]-->
 
-  	
+
 
   <!--[if lt IE 7 ]>
     <script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
